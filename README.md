@@ -14,4 +14,4 @@ description.....
 
 source code: https://github.com/BuiCongTu/Group1-T1.2311.m0-eProject
 
-view web: http(s)://BuiCongTu.github.io/Group1-T1.2311.m0-eProject
+view web: https://BuiCongTu.github.io/Group1-T1.2311.m0-eProject
