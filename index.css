@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+  height: auto;
+  font-family: url("../fonts/osward/greenyellow.ttf");
+}
+@media (max-width: 576px) {
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-container input,
+  .search-container button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+header {
+  background-color: #063852;
+}
+.logo {
+  width: 20vw;
+  height: 10vw;
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+  margin-left: 2vw;
+  margin-right: 3vw;
+  background-color: #063852;
+}
+
+.header-icon-addcart {
+  width: auto;
+  height: 2vw;
+  margin-right: 5vw;
+  position: static;
+}
+.btn-header-login {
+  position: static; /* Đặt phần tử ở vị trí cố định */
+  top: 0.5vw; /* Đặt phần tử ở phía trên của màn hình */
+  margin-right: 5vw; /* Đặt phần tử ở phía phải của màn hình */
+  color: #e6df44;
+  width: 10vw;
+  height: 5vw;
+  transform: translate(-50%, 50%);
+  font-size: 1.7vw;
+  text-align: center;
+  border: 0px solid #e6df44;
+}
+.dropdown-menu {
+  background-color: #063852 !important;
+}
+.dropdown-item {
+  color: #e6df44 !important;
+  font-size: 1.7vw;
+  font-weight: bolder;
+}
+.divider {
+  color: greenyellow !important;
+}
+.btn-danger {
+  background-color: #063852 !important;
+  color: #e6df44 !important;
+  font-size: 1.7vw;
+  border: solid 1px #063852;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #063852;
+  font-size: 1.7vw;
+  padding-left: 7rem;
+}
+
+nav a {
+  color: #e6df44;
+}
+
+nav a:hover {
+  color: #ff7f50;
+}
+
+.active {
+  color: #e6df44;
+}
+
+footer p a:hover {
+  color: #ff7f50;
+}
+:active {
+  color: #e6df44;
+}
+
+.img-frame-width-full {
+  max-width: 100%;
+  height: 10%;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  border: solid 1px #063852;
+}
+.font-heading-content {
+  font-size: 4.8vw;
+  font-weight: bolder;
+  text-align: center;
+  color: #063852;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 0;
+  border: solid 1px #063852;
+}
+.font-heading-content-subject {
+  font-size: 3.2vw;
+  font-weight: bolder;
+  text-align: left;
+  color: #063852;
+  border: solid 1px #063852;
+}
+.font-content-content {
+  font-size: 1.7vw;
+  text-align: left;
+  color: #063852;
+  width: 20vw;
+  height: auto;
+  border: solid 1px #063852;
+}
+.img-right-subject {
+  width: 40vw;
+  height: auto;
+  display: inline-block;
+  /* padding-right: 5vw; */
+  margin-right: 5vw;
+  border: solid 1px #063852;
+}
+.img-left-subject {
+  width: 40vw;
+  height: auto;
+  display: inline-block;
+  /* padding-left: 5vw; */
+  margin-left: 8vw;
+  border: solid 1px #063852;
+}
+.space-content-right-body {
+  padding-left: 10vw;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  padding-right: 10vw;
+}
+.space-content-left-body {
+  padding-left: 25vw;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  border: solid 1px #063852;
+}
+footer {
+  background-color: #063852;
+  color: #e6df44;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: left;
+  padding-top: auto;
+}
+.col-1-footer-content {
+  color: #e6df44;
+}
+.column-1-footer {
+  flex: 30%;
+  padding: 1vw;
+  margin-left: auto;
+  text-align: left;
+  color: #e6df44 !important;
+}
+.column-2-footer {
+  flex: 20%;
+  padding: 1vw;
+  margin-left: auto;
+  text-align: left;
+}
+.column-3-footer {
+  flex: 40%;
+  padding: 1vw;
+  margin-left: auto;
+  text-align: left;
+}
+.icon-footer {
+  width: 1vw;
+  height: 1vw;
+  text-align: center;
+  /* padding-left: 5vw; */
+}
+.col-1-footer {
+  padding-left: 6vw;
+}
+.social-item {
+  color: azure;
+  float: top 10rem;
+  font-size: 30px;
+  line-height: 1.5rem;
+  margin: 1.3rem;
+}
+.container {
+  width: 300px; /* Äá»™ rá»™ng cá»§a container */
+  height: 200px; /* Chiá»u cao cá»§a container */
+  background-color: #f0f0f0; /* MÃ u ná»n cá»§a container */
+  padding: 10px; /* Khoáº£ng cÃ¡ch bÃªn trong container */
+  border: 1px solid #ccc; /* ÄÆ°á»ng viá»n cá»§a container */
+  border-radius: 5px; /* Bo trÃ²n cÃ¡c gÃ³c cá»§a container */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Hiá»ƒn thá»‹ bÃ³ng Ä‘á»• */
+}
+#scrollBtn {
+  display: flex; /* Ẩn nút khi không được sử dụng */
+  position: fixed; /* Hiển thị nút cố định trên màn hình */
+  bottom: 5vw; /* Khoảng cách từ nút đến đáy màn hình */
+  right: 5vw; /* Khoảng cách từ nút đến cạnh phải màn hình */
+  z-index: 99; /* Đảm bảo nút luôn nằm trên các phần tử khác */
+  background-color: #007bff; /* Màu nền của nút */
+  color: white; /* Màu chữ của nút */
+  border: none; /* Không có đường viền */
+  border-radius: 50%; /* Bo tròn viền */
+  cursor: pointer; /* Biến con trỏ thành kiểu pointer khi rê chuột vào nút */
+  padding: 10px; /* Kích thước lề của nút */
+  font-size: 16px; /* Kích thước chữ của nút */
+}
+
+.copyright {
+  color: #063852;
+  text-align: left;
+  padding-left: 4vw;
+  font-size: 1vw;
+}
