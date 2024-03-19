@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <h1 id="top"></h1>
   <header>
     <div class="container-fluid">
       <div class="row align-items-center justify-content-between">
@@ -71,9 +72,37 @@
   </header>
 
   <main>
-
     <p class="font-heading-content">Contact Us</p>
+    <div class="container-contact">
+      <h2>Create Account</h2>
+      <form action="/signup" method="post">
+        <div class="input-group">
+          <label for="fname">Title:</label>
+          <input type="text" name="fname" id="fname">
+        </div>
+        <div class="input-group">
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" required>
+        </div>
+        <div class="input-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-group">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn">Create Account</button>
+      </form>
 
+
+      <a href="#top">
+        <h1 class="ontop">&#8593;Top&#8593;</h1>;
+      </a>
   </main>
 
   <footer class="footer">

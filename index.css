@@ -1,7 +1,6 @@
 body {
   margin: 0;
   height: auto;
-  font-family: url("../fonts/osward/greenyellow.ttf");
 }
 @media (max-width: 576px) {
   .search-container {
@@ -227,4 +226,193 @@ footer {
   text-align: left;
   padding-left: 4vw;
   font-size: 1vw;
+}
+.ontop {
+  width: 80%; /* Chiều rộng của container */
+  max-width: 200px; /* Chiều rộng tối đa của container */
+  margin: 10px auto; /* Canh giữa container */
+  padding: 20px; /* Khoảng cách bên trong container */
+  background-color: #e6df44; /* Màu nền của container */
+  border: 1px solid #ccc; /* Đường viền của container */
+  border-radius: 10%; /* Đường cong viền */
+  text-align: center;
+}
+
+.main-bodyfit {
+  font-size: 30px;
+}
+.font-main-content {
+  font-size: 2.8vw;
+  font-weight: bolder;
+  text-align: center;
+  color: #063852;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 0;
+  border: #063852;
+}
+.container {
+  display: flex; /* Sử dụng flexbox để căn giữa nội dung */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  height: 100vh; /* Chiều cao của container */
+  height: 600px;
+  width: 1100px;
+  margin: 0;
+}
+.img {
+  max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước của container */
+  max-height: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước của container */
+  height: auto; /* Đảm bảo tỷ lệ khung hình được bảo toàn */
+}
+.main-bodyfit1 {
+  text-align: center;
+  font-size: 30px;
+}
+.img1 {
+  text-align: center;
+}
+.mian-sexydance {
+  text-align: center;
+  font-size: 30px;
+}
+.font-heading-sexydance {
+  font-size: 2.8vw;
+  font-weight: bolder;
+  text-align: center;
+  color: #063852;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 0;
+  border: #063852;
+}
+.imgsexy {
+  text-align: center;
+}
+.mian-sexydance1 {
+  text-align: center;
+  margin: 0;
+  font-size: 30px;
+}
+.sexydance {
+  text-align: center;
+}
+.mian-zumba {
+  text-align: center;
+  margin: 0;
+  font-size: 30px;
+}
+.zumba {
+  text-align: center;
+}
+.mian-swimming {
+  text-align: center;
+  margin: 0;
+  font-size: 30px;
+}
+.font-heading-cycling {
+  font-size: 2.8vw;
+  font-weight: bolder;
+  color: #063852;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 0;
+  border: #063852;
+}
+.mian-cycling {
+  text-align: center;
+  margin: 0;
+  font-size: 30px;
+}
+.cycling {
+  text-align: center;
+}
+.font-content-group {
+  font-size: 2.8vw;
+  font-weight: bolder;
+  color: #063852;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 0;
+  border: #063852;
+}
+.mian-group,
+ul {
+  text-align: center;
+  margin: 0;
+  font-size: 30px;
+}
+.mian-group1 {
+  font-size: 1.8vw;
+  font-weight: bolder;
+  color: #063852;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 0;
+  border: #063852;
+}
+.groupx {
+  text-align: center;
+}
+.font-heading-member {
+  font-size: 2.8vw;
+  font-weight: bolder;
+  color: #063852;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 0;
+  border: #063852;
+}
+.mian-member {
+  text-align: center;
+  margin: 0;
+  font-size: 30px;
+}
+.tex {
+  text-align: center;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+.container-contact {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.container-contact h2 {
+  text-align: center;
+}
+.input-group {
+  margin-bottom: 20px;
+}
+.input-group label {
+  display: block;
+  font-weight: bold;
+}
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#scrollBtn {
+  display: none; /* Ẩn nút khi trang web không được cuộn */
+  position: fixed; /* Cố định nút ở vị trí cố định */
+  bottom: 5vw; /* Vị trí dưới cùng cách mép dưới 20px */
+  right: 5vw; /* Vị trí từ mép phải cách mép phải 20px */
+  z-index: 99; /* Đặt z-index để nút hiển thị trên mọi nội dung khác */
+  border: none; /* Loại bỏ đường viền */
+  outline: none; /* Loại bỏ đường viền khi được nhấp */
+  background-color: #063852; /* Màu nền của nút */
+  color: white; /* Màu chữ của nút */
+  cursor: pointer; /* Đổi con trỏ khi rê chuột qua nút */
+  padding: 1vw; /* Kích thước padding của nút */
+  border-radius: 50%; /* Bo tròn góc của nút */
+  transition: background-color 0.3s; /* Hiệu ứng chuyển đổi màu nền */
+}
+
+#scrollBtn:hover {
+  background-color: #e6df44; /* Màu nền khi di chuột qua nút */
 }

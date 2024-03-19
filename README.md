@@ -12,6 +12,6 @@ Student1531941	Nguyễn Trần Tuấn Dũng
 	 
 description.....
 
-source code: https://github.com/BuiCongTu/Group1-T1.2311.m0-eProject
+source code: https://github.com/BuiCongTu/Group1_PrimeFitness/   
 
-view web: https://BuiCongTu.github.io/Group1-T1.2311.m0-eProject
+view web: https://buicongtu.github.io/Group1_PrimeFitness/

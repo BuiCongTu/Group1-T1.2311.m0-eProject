@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <title>Log In</title>
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="index.js">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.css" />
@@ -73,6 +73,30 @@
   <main>
 
     <p class="font-heading-content">Log In</p>
+    <form action="#" method="POST">
+      <label for="member_name">Member Name:</label>
+      <input type="text" id="member_name" name="member_name" required /><br />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required /><br />
+
+      <!-- Sign In with Google Button -->
+      <button type="button" onclick="signInWithGoogle()">
+        Sign In with Google
+      </button>
+
+      <!-- Sign In with Facebook Button -->
+      <button type="button" onclick="signInWithFacebook()">
+        Sign In with Facebook
+      </button>
+      <br />
+
+      <a href="./forgetPassword.html">Forgot Password?</a> <br />
+
+      <input type="submit" value="Submit" />
+
+      <button type="button" onclick="cancel()">Cancel</button>
+    </form>
 
   </main>
 
@@ -128,6 +152,16 @@
       window.location.href = './search.html'; // Chuyển hướng đến trang search.html
     }
   });
+  function signInWithGoogle() {
+    // Implement Google sign-in functionality
+  }
+
+  function signInWithFacebook() {
+    // Implement Facebook sign-in functionality
+  }
+  function cancel() {
+    // Implement cancel functionality (e.g., redirect to another page)
+  }
 </script>
 
 </html>
