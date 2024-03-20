@@ -416,3 +416,61 @@ body {
 #scrollBtn:hover {
   background-color: #e6df44; /* Màu nền khi di chuột qua nút */
 }
+
+.membership-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 150px;
+  display: inline-block;
+  background-color: orange;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.container-login {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.forgot-password-link {
+  text-align: center; /* căn giữa nội dung */
+  margin-top: 20px; /* khoảng cách từ phía trên */
+  margin-bottom: 20px; /* khoảng cách từ phía dưới */
+}
+
+.create-account-link {
+  text-align: center; /* căn giữa nội dung */
+  margin-top: 20px; /* khoảng cách từ phía trên */
+  margin-bottom: 20px; /* khoảng cách từ phía dưới */
+}
+.submit-login-box,
+.cancel-login-box {
+  color: white; /* Màu chữ trắng */
+  border: none; /* Loại bỏ viền */
+  padding: 10px 20px; /* Khoảng cách bên trong */
+  width: 150px; /* Độ rộng */
+  display: inline-block; /* Hiển thị inline để nút nằm cạnh nhau */
+  background-color: #063852; /* Màu nền */
+  border-radius: 8px; /* Bo tròn góc */
+  text-align: center; /* Căn giữa nội dung */
+  margin: 20px auto; /* Tự động căn giữa theo chiều ngang và có khoảng cách 20px từ phía trên và dưới */
+}
+
+.submit-login-box:hover,
+.cancel-login-box:hover {
+  background-color: #fff; /* Màu nền khi rê chuột qua */
+  color: red; /* Màu chữ khi rê chuột qua */
+}
+
+.container-forgotPassword {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
