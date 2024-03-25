@@ -72,7 +72,82 @@
 
   <main>
 
-    <p class="font-heading-content">Payment</p>
+    <p class="font-heading-content">Your Shopping Cart</p>
+    <form action="" oninput="updateTotal()">
+      <table class="table-payment">
+        <tr>
+          <th>Item</th>
+          <th>Quanlity</th>
+          <th>Price (usd)</th>
+          <th>Money</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>Sivler Card</td>
+          <td>
+            <select name="product1">
+              <option value="12">3 Moth</option>
+              <option value="24">6 Moth</option>
+              <option value="48">1 year</option>
+            </select>
+          </td>
+          <td><input type="number" value="0" min="1" max="10" name="qty1"></td>
+          <td><output name="total1" value="Total"></output></td>
+          <td>dd</td>
+        </tr>
+        <tr>
+          <td>God Card</td>
+          <td>
+            <select name="product2">
+              <option value="20">3 Moth</option>
+              <option value="40">6 Moth</option>
+              <option value="60">1 year</option>
+            </select>
+          </td>
+          <td><input type="number" value="0" min="1" max="10" name="qty2"></td>
+          <td><output name="total2"></output></td>
+          <td>dalte</td>
+        </tr>
+        <tr>
+          <td>Daimond Card</td>
+          <td>
+            <select name="product3">
+              <option value="50">3 Moth</option>
+              <option value="100">6 Moth</option>
+              <option value="150">1 year</option>
+            </select>
+          </td>
+          <td><input type="number" value="0" min="1" max="10" name="qty3"></td>
+          <td><output name="total3"></output></td>
+          <td>Dalte</td>
+        </tr>
+      </table>
+    </form>
+    
+<p class="main-payment">Payments:</p>
+<input type="radio" value="Card" name="Card"> Card <br>
+<input type="radio" value="Banking" name="Card">Banking
+<div class="containerqr"></div>
+<input type="radio" value="credicard" name="Card"> Credicard
+
+<div class="containervisa">
+   
+  <div>Visa PayPal</div>
+
+  <div><label for="cardnumber">Credit Card Number</label></div>
+  
+  <div><input type="number" id="cardnumber" name="cardnumber"></div>
+  <div><label for="expmonth">Exp Month</label></div>
+  <div><input type="number" id="expmonth" name="expmonth"></div>
+  <div><label for="expyear">Exp Year</label></div>
+  <div><input type="number" id="year" name="year" min="1900" max="2099"></div>
+  <div><label for="number">CVV</label></div>
+  <div><input type="number" id="cvv" name="cvv" min="0" max="999"></div>
+  <div><button type="submit">Submit</button> <button type="cancel">Cancel</button></div>
+  
+</div>
+
+
 
   </main>
 
@@ -119,6 +194,7 @@
   <p class="copyright">&copy;Copyright 2024 by Prime Fitness</p>
 
 </body>
+<script src="index.js"></script>
 <script>
   document.getElementById('searchForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Ngăn chặn hành động mặc định của form
@@ -128,6 +204,14 @@
       window.location.href = './search.html'; // Chuyển hướng đến trang search.html
     }
   });
-</script>
+  function updateTotal() {
+    for (let i = 1; i <= 3; i++) {
+      const product = parseInt(document.querySelector(`[name="product${i}"]`).value);
+      const qty = parseInt(document.querySelector(`[name="qty${i}"]`).value);
+      const total = product * qty;
+      document.querySelector(`output[name="total${i}"]`).textContent = total;
+    }
+  };
+  </script>
 
 </html>

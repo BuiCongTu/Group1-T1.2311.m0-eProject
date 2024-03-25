@@ -91,23 +91,10 @@
     </header>
 
     <main>
-      <p class="font-heading-content">Create New Account</p>
-      <div class="container-createAccount">
-        <h2>Create Account</h2>
+        <div class="container-create">
+        <p class="font-heading-content">Create New Account</p>
         <form action="#" method="POST">
-          <!-- title -->
-          <div class="input-group">
-            <label for="title">Title:</label>
-            <select id="title" name="title">
-              <option value="Mr.">Mr.</option>
-              <option value="Ms.">Ms.</option>
-              <option value="Mrs.">Mrs.</option>
-              <option value="Dr.">Dr.</option>
-            </select>
-          </div>
-
-          <!-- member name -->
-          <div class="input-group">
+            
             <label for="member_name">Member Name:</label>
             <input type="text" id="member_name" name="member_name" required />
           </div>
@@ -305,17 +292,10 @@
             <a href="Forgetpassword.html">Forgot Password?</a> <br />
           </div>
 
-          <!-- submit -->
-          <div class="submit-login-box">
-            <button type="submit" class="btn"><b>Submit</b></button>
-          </div>
+                    <button value="submit" onclick="registerUser()">Submit</button>
 
-          <!-- cancel -->
-          <div class="cancel-login-box">
-            <button type="button" onclick="cancel()" class="btn">
-              <b>Cancel</b>
-            </button>
-          </div>
+                <button type="button" onclick="cancel()">Cancel</button>
+            </div>
         </form>
       </div>
     </main>
@@ -393,14 +373,47 @@
         }
       });
     function signInWithGoogle() {
-      // Implement Google sign-in functionality
+        window.location.href = "http://gmail.com";
     }
 
     function signInWithFacebook() {
-      // Implement Facebook sign-in functionality
+        window.location.href = "http://facebook.com";
     }
     function cancel() {
       // Implement cancel functionality (e.g., redirect to another page)
     }
-  </script>
+
+    function registerUser() {
+        // Lấy dữ liệu từ form
+        const memberName = document.getElementById('member_name').value;
+        const fullName = document.getElementById('full_name').value;
+        const gender = document.getElementById('gender').value;
+        const dobDay = document.getElementsByName('dob_day').value;
+        const dobMonth = document.getElementsByName('month').value;
+        const dobYear = document.getElementsByName('year').value;
+        const phoneNumber = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm_password').value;
+
+        // Kiểm tra mật khẩu và xác nhận mật khẩu
+        if (password !== confirmPassword) {
+            alert("Mật khẩu và xác nhận mật khẩu không khớp!");
+            return;
+        }
+
+        // Gửi dữ liệu đăng ký đến server (trong ví dụ này chỉ là mock API)
+        // Đây là nơi bạn sẽ gửi dữ liệu đăng ký đến server thực tế để xử lý
+
+        // Hiển thị thông báo hoặc chuyển hướng người dùng sau khi đăng ký thành công
+        alert("Đăng ký thành công!");
+        // Chuyển hướng người dùng đến trang đăng nhập hoặc trang khác
+        window.location.href = "log_in.html";
+    }
+
+
+
+    
+</script>
+
 </html>

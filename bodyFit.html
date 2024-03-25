@@ -71,18 +71,19 @@
   </header>
 
   <main>
-
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top" style="display: none;">Top</button>
     <p class="font-heading-content">Body Fit</p>
     <p class="main-bodyfit">Body Fit is a series of weightlifting exercises set to continuous music for about 1 hour.
       Training combined with light weight
       dumbbells helps burn calories effectively. Body Fit training helps strengthen bones and effectively reduce
       bone-related diseases.</p>
     <p class="font-main-content">FEATURES OF BODY FIT CLASS</p>
-    <p class="main-bodyfit">What is included in a one-hour class at Body Fit PrimeFitness?
-      The duration only needs 60 minutes per session.
-      Calories burned after each session range from 700 to 800.
-      Level: Basic - Advanced.
-    </p>
+    <div class="main-bodyfit">
+      <p>What is included in a one-hour class at Body Fit PrimeFitness?</p>
+      <p>The duration only needs 60 minutes per session.</p>
+      <p>Calories burned after each session range from 700 to 800.</p>
+      Level: Basic - Advanced.</div>
+    
     <div class="container"><img src="./Images/Image/bodyfit.jpg" alt="aaaa"></div>
     <p class="font-main-content">Benefits of Body Fit</p>
     <p class="main-bodyfit">Enhance your health to have a flexible bodyHelp relieve stress and fatigue
@@ -145,6 +146,7 @@
   <p class="copyright">&copy;Copyright 2024 by Prime Fitness</p>
 
 </body>
+<script src="index.js"></script>
 <script>
   document.getElementById('searchForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Ngăn chặn hành động mặc định của form
