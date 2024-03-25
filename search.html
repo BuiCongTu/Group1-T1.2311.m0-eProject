@@ -74,6 +74,20 @@
     <main>
 
         <p class="font-heading-content">Searching...</p>
+        <h1>Search Page</h1>
+    
+    <form id="searchForm" onsubmit="search(event)">
+        <label for="searchQuery">Search:</label>
+        <input type="text" id="searchQuery" name="searchQuery" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <div id="searchResults" id="searchResults">
+        
+        
+    </div>
+    <div class="container-search"></div>
+    <h1>.</h1>
 
     </main>
 
@@ -129,6 +143,22 @@
             window.location.href = './search.html'; // Chuyển hướng đến trang search.html
         }
     });
+    function search(event) {
+            event.preventDefault(); // Ngăn form gửi đi
+
+            // Lấy giá trị từ trường tìm kiếm
+            const searchQuery = document.getElementById('searchQuery').value;
+
+            // Gửi dữ liệu tìm kiếm đến server (trong ví dụ này chỉ là mock API)
+            // Đây là nơi bạn sẽ gửi dữ liệu tìm kiếm đến server thực tế để lấy kết quả
+
+            // Trong ví dụ này, chúng ta chỉ hiển thị thông báo về dữ liệu đã tìm kiếm
+            const searchResults = `Kết quả tìm kiếm cho: ${searchQuery}`;
+            document.getElementById('searchResults').textContent = searchResults;
+        }
+        function searchResults(){
+            var searchResults = document.getElementById('searchResults')
+        }
 </script>
 
 </html>
