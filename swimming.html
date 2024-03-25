@@ -4,39 +4,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <title>Body Fit</title>
   <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="index.js">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.css" />
-  <!-- Bootstrap JS file -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
   <header>
-    <div class="container-fluid">
-      <div class="row align-items-center justify-content-between">
-        <div class="col-auto">
+    <!-- ----------------header---------------------- -->
+    <div class="container-fluid fixed-ontop">
+      <div class="row align-items-center">
+        <nav class="nav-1-header">
           <a href="./index.html"><img class="logo img-fluid" src="./Images/Logo/Logo.png" alt="logo" /></a>
-        </div>
-
-        <div class="col">
-          <form class="d-flex" id="searchForm">
-            <input id="searchInput" class="form-control me-3" type="text" placeholder="Search" />
-            <a class="btn btn-primary" href="./search.html">Search</a>
-
-          </form>
-        </div>
-
-        <div class="col-auto">
-          <a href="./payment.html"><img class="header-icon-addcart" src="./Images/icon/addcart.png"
+          <input id="searchInput" class="searchinput-nav-1-header" type="text" placeholder="Search..." />
+          <button class="btn btn-primary" type="submit">Search</button>
+          <a href="./payment.html"><img class="addcart-nav-1-header" src="./Images/icon/addcart.png"
               alt="add cart" /></a>
-          <a class="btn-header-login" href="log_in.html">Log in</a>
-        </div>
+          <form>
+            <a class="login-nav-1-header" href="log_in.html">Log in</a>
+          </form>
+        </nav>
       </div>
     </div>
-
-    <nav>
+    <!-- ----------------navbar---------------------- -->
+    <nav class="nav-2-header">
       <a href="./index.html" class="active">Home</a>
       <div class="btn-group">
         <button type="button" class="btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,78 +60,114 @@
       <a href="./contact.html" class="active">Contact Us</a>
     </nav>
   </header>
-
+  <!-- ----------------Main---------------------- -->
   <main>
+    <!--Scroll to Top -->
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top" style="display: none">
+      Top
+    </button>
 
-    <p class="font-heading-content">Swimming</p>
-    <p class="font-heading-sexydance">Swimming for health training? Here are the recommended swimming exercises by
-      Speedo</p>
-    <p class="mian-swimming">There’s a reason so many Australians rate swimming as their favourite exercise routine.
-      A swimming training program is low impact and can be enjoyed at any age, it builds both cardiovascular fitness and
-      endurance,
-      and all you need to get started are a good pair of goggles, swimmers and a swim cap.</p>
-    <div class="zumba"><img src="./Images/Image/swimming01.jpg" alt=""></div>
-    <p class="mian-swimming">It can be tough to know how long to swim to get a good workout. Speedo cares deeply about
-      this sport,
-      and we’ve developed a routine that will meet you where you are. If you’
-      re just starting out and looking for a swim workout for beginners, try one of our simple programs that will help
-      you to build
-      strength and develop a good feel for the water. For those who regularly swim for fitness, Speedo’s intermediate
-      swim sets will
-      challenge you and introduce new concepts to shake things up. If you’re a serious swimmer or need a swim workout
-      for a triathlon,
-      competition or ocean race, then look to our advanced swim workouts to build speed and endurance. Intermediate and
-      advanced swim workouts would benefit
-      from some swim gear to kick things up a notch. Every swim training program includes a warm up, main set and cool
-      down.
-      Some people do a swim workout for weight loss or to cross train for other sports. Others just love the feeling of
-      starting their day gliding through water.
-      Whether you are eight years old or 80, there’s never a better time than today to dive on in.</p>
-    <p class="font-heading-sexydance">1. Warm Up on Dry Land</p>
-    <p class="mian-swimming">The sport places demands on the legs (calves in particular), back, and shoulder, says Brian
-      Towin, a physical therapist in Atlanta who specializes in swimming.
-      Stave off leg cramps with sprinters' moves: Stand a few feet in front of a wall and, using it as support, step one
-      foot back and bend front leg. Switch, then pull each leg to your butt for a quad stretch.
-      Prep your back with side bends: Stand with feet together, arms overhead, pressing palms together, and tilt torso
-      to each side. For the hsoulders, press palms into the small of your back, fingertips up,
-      draw elbows toward each otehr and raise your chest.
-      And shoulder rolls work, too, but don't go Micahel Phelps aggressive. Bend elbows at 90 degrees,
-      point fingerrtips toward the ceiling, and rotate shoulders in both directions. </p>
-    <p class="font-heading-sexydance">2. Relax</p>
-    <div class="zumba"><img src="./Images/Image/swimming2.png" alt=""></div>
-    <p class="mian-swimming">"Tense muscles sink like rocks, whereas releaxed muscles act more like buoys," says Andey
-      Sean kershaw,
-      head swim coach at the University of Miami. Just as important is to maintain a neutral positiion with your head,
-      shoulders,
-      and glutes in a line. It takes strain off your neck and back and helps you swim more gracefully. And it'll cue you
-      to stay parallel in the water.
-      "Your body works like a teeter-totter—if your head comes up, your hips go down," Kershaw says. Breathing plays a
-      key role in this. As you get better at it,
-      the pattern becomes its own meditation to keep you chill (and clears your head). </p>
-    <p class="font-heading-sexydance">3. Focus on Form</p>
-    <p class="mian-swimming">since you took swimming lessons as a kid, there's been a change of thinking on best
-      technique, Kershaw says. The pros have traded big, sweeping arm pulls for a tighter, linear patter. Picture your
-      body shooting past your hands, the same way you plant your palms on the pool edge and push through your amrs to
-      get out of the water. Here's how it's done: Your arm should enter the water just in front of your head, starting
-      with teh tip of the middle finger. Extend it straight so your palm faces the bottom of the pool Bend wrist
-      slightly like you're reacing into a cookie jar and pull your elbow back along your side, keeping your hand
-      parallel to your body. Pair that motion with tight, rolling kicks, keeping legs fairly straight,
-      three kicks for each pull (or six kicks per stroke cycle). </p>
-    <p class="font-heading-sexydance">4. Go the Distance</p>
-    <p class="mian-swimming">Pools are usually short course (25 meters) or Olympic distance (50 meters). Short pools are
-      good for aerobic sprint interval training, Mabe says, whereas Olympic ones can help you prep for triathlon or
-      open-water swims, since you're going twice as far without a respite. If you find yourself in a longer pool and
-      want a high-intensity workout, use the painted marking below you (or on the ceiling if you're doing backstroke)
-      to split up the laps between fast bursts and recovery. </p>
-    <p class="font-heading-sexydance">5. Float On</p>
-    <p class="mian-swimming">Just like a land workout, you'll want ot change things up and isolate different muscle
-      groups. A kickboard will help you target legs either during a warm-up or between sprints, Mabe says. Don fins if
-      you want your upper body to do the heavy lifting. (And advanced swimmers can practice laps while keeping legs
-      still.)</p>
+    <div>
+      <img style="width: 99vw; height: auto;" src="./Images/Image/swimming.jpeg" alt="" />
+    </div>
 
-
+    <p class="font-head-title-center">
+      Swimming for health training? Here are the recommended swimming
+      exercises by Speedo
+    </p>
+    <p class="font-content-center">
+      There’s a reason so many Australians rate swimming as their favourite
+      exercise routine. A swimming training program is low impact and can be
+      enjoyed at any age, it builds both cardiovascular fitness and endurance,
+      and all you need to get started are a good pair of goggles, swimmers and
+      a swim cap.
+    </p>
+    <div class="img1">
+      <img style="width: 60vw; height: auto;" src="./Images/Image/swimming2.jpg" alt="" />
+    </div>
+    <p class="font-content-left">
+      It can be tough to know how long to swim to get a good workout. Speedo
+      cares deeply about this sport, and we’ve developed a routine that will
+      meet you where you are. If you’ re just starting out and looking for a
+      swim workout for beginners, try one of our simple programs that will
+      help you to build strength and develop a good feel for the water. For
+      those who regularly swim for fitness, Speedo’s intermediate swim sets
+      will challenge you and introduce new concepts to shake things up. If
+      you’re a serious swimmer or need a swim workout for a triathlon,
+      competition or ocean race, then look to our advanced swim workouts to
+      build speed and endurance. Intermediate and advanced swim workouts would
+      benefit from some swim gear to kick things up a notch. Every swim
+      training program includes a warm up, main set and cool down. Some people
+      do a swim workout for weight loss or to cross train for other sports.
+      Others just love the feeling of starting their day gliding through
+      water. Whether you are eight years old or 80, there’s never a better
+      time than today to dive on in.
+    </p>
+    <p class="font-sub-title-center">1. Warm Up on Dry Land</p>
+    <p class="font-content-left">
+      The sport places demands on the legs (calves in particular), back, and
+      shoulder, says Brian Towin, a physical therapist in Atlanta who
+      specializes in swimming. Stave off leg cramps with sprinters' moves:
+      Stand a few feet in front of a wall and, using it as support, step one
+      foot back and bend front leg. Switch, then pull each leg to your butt
+      for a quad stretch. Prep your back with side bends: Stand with feet
+      together, arms overhead, pressing palms together, and tilt torso to each
+      side. For the hsoulders, press palms into the small of your back,
+      fingertips up, draw elbows toward each otehr and raise your chest. And
+      shoulder rolls work, too, but don't go Micahel Phelps aggressive. Bend
+      elbows at 90 degrees, point fingerrtips toward the ceiling, and rotate
+      shoulders in both directions. 
+    </p>
+    <p class="font-sub-title-center">2. Relax</p>
+    <div class="img1">
+      <img style="width: 60vw; height: auto;" src="./Images/Image/swimming4.png" alt="" />
+    </div>
+    <p class="font-content-left">
+      "Tense muscles sink like rocks, whereas releaxed muscles act more like
+      buoys," says Andey Sean kershaw, head swim coach at the University of
+      Miami. Just as important is to maintain a neutral positiion with your
+      head, shoulders, and glutes in a line. It takes strain off your neck and
+      back and helps you swim more gracefully. And it'll cue you to stay
+      parallel in the water. "Your body works like a teeter-totter—if your
+      head comes up, your hips go down," Kershaw says. Breathing plays a key
+      role in this. As you get better at it, the pattern becomes its own
+      meditation to keep you chill (and clears your head). 
+    </p>
+    <p class="font-sub-title-center">3. Focus on Form</p>
+    <p class="font-content-left">
+      since you took swimming lessons as a kid, there's been a change of
+      thinking on best technique, Kershaw says. The pros have traded big,
+      sweeping arm pulls for a tighter, linear patter. Picture your body
+      shooting past your hands, the same way you plant your palms on the pool
+      edge and push through your amrs to get out of the water. Here's how it's
+      done: Your arm should enter the water just in front of your head,
+      starting with teh tip of the middle finger. Extend it straight so your
+      palm faces the bottom of the pool Bend wrist slightly like you're
+      reacing into a cookie jar and pull your elbow back along your side,
+      keeping your hand parallel to your body. Pair that motion with tight,
+      rolling kicks, keeping legs fairly straight, three kicks for each pull
+      (or six kicks per stroke cycle). 
+    </p>
+    <p class="font-sub-title-center">4. Go the Distance</p>
+    <p class="font-content-left">
+      Pools are usually short course (25 meters) or Olympic distance (50
+      meters). Short pools are good for aerobic sprint interval training, Mabe
+      says, whereas Olympic ones can help you prep for triathlon or open-water
+      swims, since you're going twice as far without a respite. If you find
+      yourself in a longer pool and want a high-intensity workout, use the
+      painted marking below you (or on the ceiling if you're doing backstroke)
+      to split up the laps between fast bursts and recovery. 
+    </p>
+    <p class="font-sub-title-center">5. Float On</p>
+    <p class="font-content-left">
+      Just like a land workout, you'll want ot change things up and isolate
+      different muscle groups. A kickboard will help you target legs either
+      during a warm-up or between sprints, Mabe says. Don fins if you want
+      your upper body to do the heavy lifting. (And advanced swimmers can
+      practice laps while keeping legs still.)
+    </p>
   </main>
-
+  <!-- ----------------foter---------------------- -->
   <footer class="footer">
     <div class="column-1-footer">
       <div class="col-auto">
@@ -158,41 +185,46 @@
           primefitness@gmail.com</a>
       </div>
       <div class="col-1-footer">
-        <img class="icon-footer" src="./Images/icon/open.png" alt="opening" />
+        <img class="icon-footer" src="./Images/icon/open-sign.png" alt="opening" />
         4:30 am - 10:30 pm
       </div>
     </div>
     <div class="column-2-footer">
       <div>
-        <p><a href="./aboutus.html" class="active">About Us</a></p>
-        <p><a href="./contact.html" class="active">Contact Us</a></p>
-        <p><a href="./groupX.html" class="active">Group X</a></p>
-        <p>
-          <a href="./privacyPolicy.html" class="active">Privacy Policy</a>
-        </p>
-        <p><a href="./siteMap.html" class="active">Site Map</a></p>
+        <a href="./aboutus.html" class="active link-column-2-footer">About Us</a>
+        <br />
+        <br />
+        <a href="./contact.html" class="active link-column-2-footer">Contact Us</a>
+        <br />
+        <br />
+        <a href="./groupX.html" class="active link-column-2-footer">Group X</a>
+        <br />
+        <br />
+        <a href="./privacyPolicy.html" class="active link-column-2-footer">Privacy Policy</a>
       </div>
     </div>
     <div class="column-3-footer">
       <div>
-        <iframe width="80%" height="200vw" frameborder="0" style="border: 0"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102446.96578567626!2dGEO_LONGITUDE!3dGEO_LATITUDE!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3AGEO_PLACE_NAME!2sGEO_PLACE_NAME!5e0!3m2!1sen!2sus!4v1647390718879!5m2!1sen!2sus"
-          allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="map-google"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3919.3221623584177!2d106.666276!3d10.786619000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDQ3JzExLjgiTiAxMDbCsDM5JzU4LjYiRQ!5e0!3m2!1svi!2s!4v1711216657941!5m2!1svi!2s"
+          frameborder="0"></iframe>
+        <div class="col-3-footer">
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/facebook.png" alt="facebook" />
+          </a>
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/instagram.png" alt="instagram" />
+          </a>
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/google.png" alt="Google" />
+          </a>
+        </div>
       </div>
     </div>
   </footer>
   <p class="copyright">&copy;Copyright 2024 by Prime Fitness</p>
-
 </body>
-<script>
-  document.getElementById('searchForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Ngăn chặn hành động mặc định của form
-
-    var searchInput = document.getElementById('searchInput').value.trim();
-    if (searchInput !== '') {
-      window.location.href = './search.html'; // Chuyển hướng đến trang search.html
-    }
-  });
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="index.js"></script>
 
 </html>

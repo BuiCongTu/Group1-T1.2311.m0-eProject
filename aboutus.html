@@ -4,39 +4,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <title>About Us</title>
   <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="index.js">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.css" />
-  <!-- Bootstrap JS file -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
   <header>
-    <div class="container-fluid">
-      <div class="row align-items-center justify-content-between">
-        <div class="col-auto">
+    <!-- ----------------header---------------------- -->
+    <div class="container-fluid fixed-ontop">
+      <div class="row align-items-center">
+        <nav class="nav-1-header">
           <a href="./index.html"><img class="logo img-fluid" src="./Images/Logo/Logo.png" alt="logo" /></a>
-        </div>
-
-        <div class="col">
-          <form class="d-flex" id="searchForm">
-            <input id="searchInput" class="form-control me-3" type="text" placeholder="Search" />
-            <a class="btn btn-primary" href="./search.html">Search</a>
-
-          </form>
-        </div>
-
-        <div class="col-auto">
-          <a href="./payment.html"><img class="header-icon-addcart" src="./Images/icon/addcart.png"
+          <input id="searchInput" class="searchinput-nav-1-header" type="text" placeholder="Search..." />
+          <button class="btn btn-primary" type="submit">Search</button>
+          <a href="./payment.html"><img class="addcart-nav-1-header" src="./Images/icon/addcart.png"
               alt="add cart" /></a>
-          <a class="btn-header-login" href="log_in.html">Log in</a>
-        </div>
+          <form><a class="login-nav-1-header" href="log_in.html">Log in</a></form>
+        </nav>
+
       </div>
     </div>
-
-    <nav>
+    <!-- ----------------navbar---------------------- -->
+    <nav class="nav-2-header">
       <a href="./index.html" class="active">Home</a>
       <div class="btn-group">
         <button type="button" class="btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,13 +59,46 @@
       <a href="./contact.html" class="active">Contact Us</a>
     </nav>
   </header>
-
+  <!-- ----------------Main---------------------- -->
   <main>
+    <!--Scroll to Top -->
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top" style="display: none;">Top</button>
 
-    <p class="font-heading-content">About Us</p>
+    <p class="font-head-title-center">About Us</p>
+    <div class="img1"><img style="width: 60vw;" src="./Images/Image/body-fit.jpg" alt=""></div>
+    <div class="main-content font-content-left">
+      Prime Fitness is a gym system open 24/7, providing high quality equipment
+      with reasonable fees and flexible monthly payment solutions. Our mission is
+      to break down the barriers to fitness. health for everyone in Vietnam,
+      providing a gym system with high quality equipment,reasonable prices and
+      flexibility for everyone from people who have never exercised to
+      professional athletes.</div>
 
+
+    <div class="img1"><img style="width: 60vw;" src="./Images/Image/body -fit-1.jpg" alt=""></div>
+    <div class="main-content font-content-left">The first gymnasiums were recorded over 3000 years ago in ancient
+      Persia, where they were
+      called zurkhaneh, areas
+      that encouraged physical training. Larger Roman baths often had attached gymnasium facilities, with the bathhouses
+      sometimes decorated with mosaics of local sports champions. Gyms in Germany represent a significant development
+      beyond Turnplatz, an outdoor exercise space with equipment founded by German educator Friedrich Jahn in 1811 and
+      later promoted by Turners, a 19th-century gymnastics and political movement. The first American to open a public
+      gym
+      in the US following Jahn's model was John Neal in Portland, Maine in 1827. The first indoor gym in Germany was
+      perhaps the gym built in Hesse in 1852 by Adolph Spiess. Through the colonialization process worldwide, the United
+      Kingdom extended the national interest in sports and games to many countries. In the</div>
+
+    <div class="img1">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10243.298296723417!2d106.68432058219638!3d10.784272072489866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed7000e1479%3A0xd265e45807ecbacd!2zNTkwIMSQLiBDw6FjaCBN4bqhbmcgVGjDoW5nIDgsIFBoxrDhu51uZyAxMSwgUXXhuq1uIDMsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1710733843063!5m2!1svi!2s"
+        width="800" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="font-content-center">
+      Contact Info: hotline: 0903.787.677 . Address: 590 CMT8, Ward 10, District 3, Ho Chi Minh City, Vietnam.
+    </div>
   </main>
-
+  <!-- ----------------foter---------------------- -->
   <footer class="footer">
     <div class="column-1-footer">
       <div class="col-auto">
@@ -93,41 +116,48 @@
           primefitness@gmail.com</a>
       </div>
       <div class="col-1-footer">
-        <img class="icon-footer" src="./Images/icon/open.png" alt="opening" />
+        <img class="icon-footer" src="./Images/icon/open-sign.png" alt="opening" />
         4:30 am - 10:30 pm
       </div>
     </div>
     <div class="column-2-footer">
       <div>
-        <p><a href="./aboutus.html" class="active">About Us</a></p>
-        <p><a href="./contact.html" class="active">Contact Us</a></p>
-        <p><a href="./groupX.html" class="active">Group X</a></p>
-        <p>
-          <a href="./privacyPolicy.html" class="active">Privacy Policy</a>
-        </p>
-        <p><a href="./siteMap.html" class="active">Site Map</a></p>
+        <a href="./aboutus.html" class="active link-column-2-footer">About Us</a>
+        <br>
+        <br>
+        <a href="./contact.html" class="active link-column-2-footer">Contact Us</a>
+        <br>
+        <br>
+        <a href="./groupX.html" class="active link-column-2-footer">Group X</a>
+        <br>
+        <br>
+        <a href="./privacyPolicy.html" class="active link-column-2-footer">Privacy Policy</a>
       </div>
     </div>
     <div class="column-3-footer">
       <div>
-        <iframe width="80%" height="200vw" frameborder="0" style="border: 0"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102446.96578567626!2dGEO_LONGITUDE!3dGEO_LATITUDE!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3AGEO_PLACE_NAME!2sGEO_PLACE_NAME!5e0!3m2!1sen!2sus!4v1647390718879!5m2!1sen!2sus"
-          allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="map-google"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3919.3221623584177!2d106.666276!3d10.786619000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDQ3JzExLjgiTiAxMDbCsDM5JzU4LjYiRQ!5e0!3m2!1svi!2s!4v1711216657941!5m2!1svi!2s"
+          frameborder="0"></iframe>
+        <div class="col-3-footer">
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/facebook.png" alt="facebook" />
+          </a>
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/instagram.png" alt="instagram" />
+          </a>
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/google.png" alt="Google" />
+          </a>
+        </div>
       </div>
     </div>
   </footer>
   <p class="copyright">&copy;Copyright 2024 by Prime Fitness</p>
 
 </body>
-<script>
-  document.getElementById('searchForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Ngăn chặn hành động mặc định của form
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="index.js"></script>
 
-    var searchInput = document.getElementById('searchInput').value.trim();
-    if (searchInput !== '') {
-      window.location.href = './search.html'; // Chuyển hướng đến trang search.html
-    }
-  });
-</script>
 
 </html>

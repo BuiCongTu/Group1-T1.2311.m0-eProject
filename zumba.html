@@ -4,39 +4,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <title>Zumba</title>
   <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="index.js">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.css" />
-  <!-- Bootstrap JS file -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
   <header>
-    <div class="container-fluid">
-      <div class="row align-items-center justify-content-between">
-        <div class="col-auto">
+    <!-- ----------------header---------------------- -->
+    <div class="container-fluid fixed-ontop">
+      <div class="row align-items-center">
+        <nav class="nav-1-header">
           <a href="./index.html"><img class="logo img-fluid" src="./Images/Logo/Logo.png" alt="logo" /></a>
-        </div>
-
-        <div class="col">
-          <form class="d-flex" id="searchForm">
-            <input id="searchInput" class="form-control me-3" type="text" placeholder="Search" />
-            <a class="btn btn-primary" href="./search.html">Search</a>
-
-          </form>
-        </div>
-
-        <div class="col-auto">
-          <a href="./payment.html"><img class="header-icon-addcart" src="./Images/icon/addcart.png"
+          <input id="searchInput" class="searchinput-nav-1-header" type="text" placeholder="Search..." />
+          <button class="btn btn-primary" type="submit">Search</button>
+          <a href="./payment.html"><img class="addcart-nav-1-header" src="./Images/icon/addcart.png"
               alt="add cart" /></a>
-          <a class="btn-header-login" href="log_in.html">Log in</a>
-        </div>
+          <form><a class="login-nav-1-header" href="log_in.html">Log in</a></form>
+        </nav>
+
       </div>
     </div>
-
-    <nav>
+    <!-- ----------------navbar---------------------- -->
+    <nav class="nav-2-header">
       <a href="./index.html" class="active">Home</a>
       <div class="btn-group">
         <button type="button" class="btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,35 +59,40 @@
       <a href="./contact.html" class="active">Contact Us</a>
     </nav>
   </header>
-
+  <!-- ----------------Main---------------------- -->
   <main>
+    <!--Scroll to Top -->
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top" style="display: none;">Top</button>
 
-    <p class="font-heading-content">Zumba</p>
-    <p class="font-heading-sexydance">ZUMBA DANCE FITNESS</p>
-    <p class="mian-zumba">Zumba Dance Fitness is a discipline created by talented Colombian dancer Alberto 'Beto' Pérez
+    <p class="font-head-title-center">Zumba</p>
+    <p class="font-sub-title-center">ZUMBA DANCE FITNESS</p>
+    <p class="font-content-left">Zumba Dance Fitness is a discipline created by talented Colombian dancer Alberto 'Beto'
+      Pérez
       in the 1990s. The discipline originated from South America, the birthplace of world-famous dances. With dance
       movements that combine simple, easy-to-memorize, and easy-to-learn gymnastic movements with vibrant Latin music,
       Zumba has become a very popular subject. So what benefits will participating in a
       Zumba Dance Fitness dance class bring you?</p>
-    <p class="font-heading-sexydance">ZUMBA DANCE FITNESS CLASS FEATURES</p>
-    <p class="mian-zumba">With one hour of class at Zumba Dance Fitness HD Fitness Center, what's there?Duration is only
+    <p class="font-sub-title-center">ZUMBA DANCE FITNESS CLASS FEATURES</p>
+    <p class="font-content-left">With one hour of class at Zumba Dance Fitness HD Fitness Center, what's there?Duration
+      is only
       60 minutes/classThe amount of calories consumed after
       each class is from 400 - 500Level: Basic – Advanced</p>
-    <div class="zumba"><img src="./Images/Image/zumba1.jfif" alt=""></div>
-    <p class="font-heading-sexydance">ZUMBA DANCE FITNESS BENEFITS</p>
-    <p class="mian-zumba">Improving your health helps you have a supple bodySupports weight loss and improves your
+    <div class="img1"><img src="./Images/Image/zumba1.jfif" alt=""></div>
+    <p class="font-sub-title-center">ZUMBA DANCE FITNESS BENEFITS</p>
+    <p class="font-content-left">Improving your health helps you have a supple bodySupports weight loss and improves
+      your
       postureRelieve stress and fatigue of lifeLearn and interact with many members at the gymAwaken your passion and
       musical abilityHelps you confidently
       express your personalityImprove memory</p>
-    <p class="font-heading-sexydance">WHAT DOES HD FITNESS BRING YOU?</p>
-    <p class="mian-zumba">With a team of enthusiastic and experienced coaches. Spacious space with modern equipment.
+    <p class="font-sub-title-center">WHAT DOES HD FITNESS BRING YOU?</p>
+    <p class="font-content-left">With a team of enthusiastic and experienced coaches. Spacious space with modern
+      equipment.
       Besides, there is also a comprehensive, methodically designed lecture system giving you the best quality Zumba
       Dance Fitness sessions. Besides, you can also participate in events, festivals,
       and outdoor Zumba classes organized by HDF.</p>
-    <div class="zumba"><img src="./Images/Image/zumba.png" alt=""></div>
-
+    <div class="img1"><img src="./Images/Image/zumba.png" alt=""></div>
   </main>
-
+  <!-- ----------------foter---------------------- -->
   <footer class="footer">
     <div class="column-1-footer">
       <div class="col-auto">
@@ -115,41 +110,48 @@
           primefitness@gmail.com</a>
       </div>
       <div class="col-1-footer">
-        <img class="icon-footer" src="./Images/icon/open.png" alt="opening" />
+        <img class="icon-footer" src="./Images/icon/open-sign.png" alt="opening" />
         4:30 am - 10:30 pm
       </div>
     </div>
     <div class="column-2-footer">
       <div>
-        <p><a href="./aboutus.html" class="active">About Us</a></p>
-        <p><a href="./contact.html" class="active">Contact Us</a></p>
-        <p><a href="./groupX.html" class="active">Group X</a></p>
-        <p>
-          <a href="./privacyPolicy.html" class="active">Privacy Policy</a>
-        </p>
-        <p><a href="./siteMap.html" class="active">Site Map</a></p>
+        <a href="./aboutus.html" class="active link-column-2-footer">About Us</a>
+        <br>
+        <br>
+        <a href="./contact.html" class="active link-column-2-footer">Contact Us</a>
+        <br>
+        <br>
+        <a href="./groupX.html" class="active link-column-2-footer">Group X</a>
+        <br>
+        <br>
+        <a href="./privacyPolicy.html" class="active link-column-2-footer">Privacy Policy</a>
       </div>
     </div>
     <div class="column-3-footer">
       <div>
-        <iframe width="80%" height="200vw" frameborder="0" style="border: 0"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102446.96578567626!2dGEO_LONGITUDE!3dGEO_LATITUDE!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3AGEO_PLACE_NAME!2sGEO_PLACE_NAME!5e0!3m2!1sen!2sus!4v1647390718879!5m2!1sen!2sus"
-          allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="map-google"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3919.3221623584177!2d106.666276!3d10.786619000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDQ3JzExLjgiTiAxMDbCsDM5JzU4LjYiRQ!5e0!3m2!1svi!2s!4v1711216657941!5m2!1svi!2s"
+          frameborder="0"></iframe>
+        <div class="col-3-footer">
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/facebook.png" alt="facebook" />
+          </a>
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/instagram.png" alt="instagram" />
+          </a>
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/google.png" alt="Google" />
+          </a>
+        </div>
       </div>
     </div>
   </footer>
   <p class="copyright">&copy;Copyright 2024 by Prime Fitness</p>
 
 </body>
-<script>
-  document.getElementById('searchForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Ngăn chặn hành động mặc định của form
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="index.js"></script>
 
-    var searchInput = document.getElementById('searchInput').value.trim();
-    if (searchInput !== '') {
-      window.location.href = './search.html'; // Chuyển hướng đến trang search.html
-    }
-  });
-</script>
 
 </html>

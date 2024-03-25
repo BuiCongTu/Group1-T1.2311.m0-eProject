@@ -4,39 +4,28 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Log In</title>
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="index.js">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.css" />
-    <!-- Bootstrap JS file -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
     <header>
-        <div class="container-fluid">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-auto">
+        <!-- ----------------header---------------------- -->
+        <div class="container-fluid fixed-ontop">
+            <div class="row align-items-center">
+                <nav class="nav-1-header">
                     <a href="./index.html"><img class="logo img-fluid" src="./Images/Logo/Logo.png" alt="logo" /></a>
-                </div>
-
-                <div class="col">
-                    <form class="d-flex" id="searchForm">
-                        <input id="searchInput" class="form-control me-3" type="text" placeholder="Search" />
-                        <a class="btn btn-primary" href="./search.html">Search</a>
-
-                    </form>
-                </div>
-
-                <div class="col-auto">
-                    <a href="./payment.html"><img class="header-icon-addcart" src="./Images/icon/addcart.png"
+                    <input id="searchInput" class="searchinput-nav-1-header" type="text" placeholder="Search..." />
+                    <button class="btn btn-primary" type="submit">Search</button>
+                    <a href="./payment.html"><img class="addcart-nav-1-header" src="./Images/icon/addcart.png"
                             alt="add cart" /></a>
-                    <a class="btn-header-login" href="log_in.html">Log in</a>
-                </div>
+                    <form><a class="login-nav-1-header" href="log_in.html">Log in</a></form>
+                </nav>
             </div>
         </div>
-
-        <nav>
+        <!-- ----------------navbar---------------------- -->
+        <nav class="nav-2-header">
             <a href="./index.html" class="active">Home</a>
             <div class="btn-group">
                 <button type="button" class="btn-danger dropdown-toggle" data-bs-toggle="dropdown"
@@ -70,243 +59,118 @@
             <a href="./contact.html" class="active">Contact Us</a>
         </nav>
     </header>
-
+    <!-- ----------------Main---------------------- -->
     <main>
 
-        <p class="font-heading-content">Create New Account</p>
-        <form action="#" method="POST">
-            <label for="title">Title:</label>
-            <select id="title" name="title">
-                <option value="Mr.">Mr.</option>
-                <option value="Ms.">Ms.</option>
-                <option value="Mrs.">Mrs.</option>
-                <option value="Dr.">Dr.</option>
-            </select><br />
+        <p class="font-sub-title-center">Create New Account</p>
+        <form id="registrationForm">
+            <table class="form-create-account">
+                <tr>
+                    <td class="font-content-right">Member name<add style="color: red">*</add>
+                    </td>
+                    <td class="font-content-left">
+                        <input type="text" id="loginname" required size="30" pattern="[a-zA-Z+\d+\S]{5,}"
+                            title="Accepts lower case, upper case, numbers and no spaces - at least 5 characters" />
+                        min=5 char(a-z, A-Z,0-9)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Password<add style="color: red">*</add>
+                    </td>
+                    <td class="font-content-left">
+                        <input type="password" name="password" value="" id="password" size="30"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{5,}" />min=5(a-z + A-Z + 0-9 + symbols)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" onclick="myFunction()">Show Password
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">
+                        Password Confirm<add style="color: red">*</add>
+                    </td>
+                    <td class="font-content-left">
+                        <input type="password" name="confirmpassword" id="confirmpassword" size="30" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Full name<add style="color: red">*</add>
+                    </td>
+                    <td class="font-content-left">
+                        <input type="text" name="fullname" id="fullname" size="50" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Address<add style="color: red">*</add>
+                    </td>
+                    <td class="font-content-left">
+                        <input type="text" name="address" id="address" size="50" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Email<add style="color: red">*</add>
+                    </td>
+                    <td class="font-content-left">
+                        <input type="email" name="email" id="email" size="50" required pattern="\w+@\w+\.[a-z]{2,3}"
+                            title="email :example@example.com" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Sex</td>
+                    <td class="font-content-left">
+                        <input type="radio" name="sex" class="sex" checked />Male
+                        <input type="radio" name="sex" class="sex" />Female
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right"><label for="dob">Date of birth</label></td>
+                    <td class="font-content-left">
+                        <select name="day" id="day"></select>
+                        <select name="month" id="month"></select>
+                        <select name="year" id="year"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Country</td>
+                    <td class="font-content-left">
+                        <select name="country" id="country"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Phone number</td>
+                    <td class="font-content-left">
+                        <input type="tel" name="phone" id="phone" size="20" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Content</td>
+                    <td class="font-content-left">
+                        <textarea name="content" id="content" cols="30" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="font-content-center">
+                        <a href="" onclick="signInWithGoogle()">Sign in with Google</a> or
+                        <a href="" onclick="signInWithFacebook()">Sign in with Facebook</a>
+                    </td>
+                    <td>
 
-            <label for="member_name">Member Name:</label>
-            <input type="text" id="member_name" name="member_name" required /><br />
-
-            <label for="full_name">Full Name:</label>
-            <input type="text" id="full_name" name="full_name" required /><br />
-
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
-            </select><br />
-
-            <label for="dob_day">Date of Birth:</label>
-            <select name="dob_day">
-                <option value="01">1</option>
-                <option value="02">2</option>
-                <option value="03">3</option>
-                <option value="04">4</option>
-                <option value="05">5</option>
-                <option value="06">6</option>
-                <option value="07">7</option>
-                <option value="08">8</option>
-                <option value="09">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-            </select>
-            <select name="month">
-                <option value="01">January</option>
-                <option value="02">February</option>
-                <option value="03">March</option>
-                <option value="04">April</option>
-                <option value="05">May</option>
-                <option value="06">June</option>
-                <option value="07">July</option>
-                <option value="08">August</option>
-                <option value="09">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-            </select>
-            </span>
-            <span>
-                <select name="year">
-                    <option value="2030">2030</option>
-                    <option value="2029">2029</option>
-                    <option value="2028">2028</option>
-                    <option value="2027">2027</option>
-                    <option value="2026">2026</option>
-                    <option value="2025">2025</option>
-                    <option value="2024">2024</option>
-                    <option value="2023">2023</option>
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
-                    <option value="2020">2020</option>
-                    <option value="2019">2019</option>
-                    <option value="2018">2018</option>
-                    <option value="2017">2017</option>
-                    <option value="2016">2016</option>
-                    <option value="2015">2015</option>
-                    <option value="2014">2014</option>
-                    <option value="2013">2013</option>
-                    <option value="2012">2012</option>
-                    <option value="2011">2011</option>
-                    <option value="2010">2010</option>
-                    <option value="2009">2009</option>
-                    <option value="2008">2008</option>
-                    <option value="2007">2007</option>
-                    <option value="2006">2006</option>
-                    <option value="2005">2005</option>
-                    <option value="2004">2004</option>
-                    <option value="2003">2003</option>
-                    <option value="2002">2002</option>
-                    <option value="2001">2001</option>
-                    <option value="2000">2000</option>
-                    <option value="1999">1999</option>
-                    <option value="1998">1998</option>
-                    <option value="1997">1997</option>
-                    <option value="1996">1996</option>
-                    <option value="1995">1995</option>
-                    <option value="1994">1994</option>
-                    <option value="1993">1993</option>
-                    <option value="1992">1992</option>
-                    <option value="1991">1991</option>
-                    <option value="1990">1990</option>
-                    <option value="1989">1989</option>
-                    <option value="1988">1988</option>
-                    <option value="1987">1987</option>
-                    <option value="1986">1986</option>
-                    <option value="1985">1985</option>
-                    <option value="1984">1984</option>
-                    <option value="1983">1983</option>
-                    <option value="1982">1982</option>
-                    <option value="1981">1981</option>
-                    <option value="1980">1980</option>
-                    <option value="1979">1979</option>
-                    <option value="1978">1978</option>
-                    <option value="1977">1977</option>
-                    <option value="1976">1976</option>
-                    <option value="1975">1975</option>
-                    <option value="1974">1974</option>
-                    <option value="1973">1973</option>
-                    <option value="1972">1972</option>
-                    <option value="1971">1971</option>
-                    <option value="1970">1970</option>
-                    <option value="1969">1969</option>
-                    <option value="1968">1968</option>
-                    <option value="1967">1967</option>
-                    <option value="1966">1966</option>
-                    <option value="1965">1965</option>
-                    <option value="1964">1964</option>
-                    <option value="1963">1963</option>
-                    <option value="1962">1962</option>
-                    <option value="1961">1961</option>
-                    <option value="1960">1960</option>
-                    <option value="1959">1959</option>
-                    <option value="1958">1958</option>
-                    <option value="1957">1957</option>
-                    <option value="1956">1956</option>
-                    <option value="1955">1955</option>
-                    <option value="1954">1954</option>
-                    <option value="1953">1953</option>
-                    <option value="1952">1952</option>
-                    <option value="1951">1951</option>
-                    <option value="1950">1950</option>
-                    <option value="1949">1949</option>
-                    <option value="1948">1948</option>
-                    <option value="1947">1947</option>
-                    <option value="1946">1946</option>
-                    <option value="1945">1945</option>
-                    <option value="1944">1944</option>
-                    <option value="1943">1943</option>
-                    <option value="1942">1942</option>
-                    <option value="1941">1941</option>
-                    <option value="1940">1940</option>
-                    <option value="1939">1939</option>
-                    <option value="1938">1938</option>
-                    <option value="1937">1937</option>
-                    <option value="1936">1936</option>
-                    <option value="1935">1935</option>
-                    <option value="1934">1934</option>
-                    <option value="1933">1933</option>
-                    <option value="1932">1932</option>
-                    <option value="1931">1931</option>
-                    <option value="1930">1930</option>
-                    <option value="1929">1929</option>
-                    <option value="1928">1928</option>
-                    <option value="1927">1927</option>
-                    <option value="1926">1926</option>
-                    <option value="1925">1925</option>
-                    <option value="1924">1924</option>
-                    <option value="1923">1923</option>
-                    <option value="1922">1922</option>
-                    <option value="1921">1921</option>
-                    <option value="1920">1920</option>
-                    <option value="1919">1919</option>
-                    <option value="1918">1918</option>
-                    <option value="1917">1917</option>
-                    <option value="1916">1916</option>
-                    <option value="1915">1915</option>
-                    <option value="1914">1914</option>
-                    <option value="1913">1913</option>
-                    <option value="1912">1912</option>
-                    <option value="1911">1911</option>
-                    <option value="1910">1910</option>
-                    <option value="1909">1909</option>
-                    <option value="1908">1908</option>
-                    <option value="1907">1907</option>
-                    <option value="1906">1906</option>
-                    <option value="1905">1905</option>
-                    <option value="1904">1904</option>
-                    <option value="1903">1903</option>
-                    <option value="1902">1902</option>
-                    <option value="1901">1901</option>
-                    <option value="1900">1900</option>
-                </select><br />
-
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required /><br />
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required /><br />
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required /><br />
-
-                <label for="confirm_password">Confirm Password:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required /><br />
-
-                <!-- Sign In with Google Button -->
-                <button type="button" onclick="signInWithGoogle()">Sign In with Google</button>
-
-                <!-- Sign In with Facebook Button -->
-                <button type="button" onclick="signInWithFacebook()">Sign In with Facebook</button> <br />
-
-                <a href="Forgetpassword.html">Forgot Password?</a> <br />
-
-
-                <input type="submit" value="Submit">
-
-                <button type="button" onclick="cancel()">Cancel</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="font-content-center">
+                        <div class="btn btn-primary" onclick="validateForm()" style="font-size: 1.7vw;">Submit</div>
+                        <div class="btn btn-primary" onclick="cancel()" style="font-size: 1.7vw;"></a>Cancel</div>
+                    </td>
+                    <!-- <td></td> -->
+                </tr>
+            </table>
         </form>
     </main>
-
+    <!-- ----------------foter---------------------- -->
     <footer class="footer">
         <div class="column-1-footer">
             <div class="col-auto">
@@ -324,51 +188,48 @@
                     primefitness@gmail.com</a>
             </div>
             <div class="col-1-footer">
-                <img class="icon-footer" src="./Images/icon/open.png" alt="opening" />
+                <img class="icon-footer" src="./Images/icon/open-sign.png" alt="opening" />
                 4:30 am - 10:30 pm
             </div>
         </div>
         <div class="column-2-footer">
             <div>
-                <p><a href="./aboutus.html" class="active">About Us</a></p>
-                <p><a href="./contact.html" class="active">Contact Us</a></p>
-                <p><a href="./groupX.html" class="active">Group X</a></p>
-                <p>
-                    <a href="./privacyPolicy.html" class="active">Privacy Policy</a>
-                </p>
-                <p><a href="./siteMap.html" class="active">Site Map</a></p>
+                <a href="./aboutus.html" class="active link-column-2-footer">About Us</a>
+                <br>
+                <br>
+                <a href="./contact.html" class="active link-column-2-footer">Contact Us</a>
+                <br>
+                <br>
+                <a href="./groupX.html" class="active link-column-2-footer">Group X</a>
+                <br>
+                <br>
+                <a href="./privacyPolicy.html" class="active link-column-2-footer">Privacy Policy</a>
             </div>
         </div>
         <div class="column-3-footer">
             <div>
-                <iframe width="80%" height="200vw" frameborder="0" style="border: 0"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102446.96578567626!2dGEO_LONGITUDE!3dGEO_LATITUDE!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3AGEO_PLACE_NAME!2sGEO_PLACE_NAME!5e0!3m2!1sen!2sus!4v1647390718879!5m2!1sen!2sus"
-                    allowfullscreen="" loading="lazy"></iframe>
+                <iframe class="map-google"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3919.3221623584177!2d106.666276!3d10.786619000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDQ3JzExLjgiTiAxMDbCsDM5JzU4LjYiRQ!5e0!3m2!1svi!2s!4v1711216657941!5m2!1svi!2s"
+                    frameborder="0"></iframe>
+                <div class="col-3-footer">
+                    <a href="" class="col-3-footer-content">
+                        <img class="icon-2-footer" src="./Images/icon/facebook.png" alt="facebook" />
+                    </a>
+                    <a href="" class="col-3-footer-content">
+                        <img class="icon-2-footer" src="./Images/icon/instagram.png" alt="instagram" />
+                    </a>
+                    <a href="" class="col-3-footer-content">
+                        <img class="icon-2-footer" src="./Images/icon/google.png" alt="Google" />
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
     <p class="copyright">&copy;Copyright 2024 by Prime Fitness</p>
 
 </body>
-<script>
-    document.getElementById('searchForm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Ngăn chặn hành động mặc định của form
-
-        var searchInput = document.getElementById('searchInput').value.trim();
-        if (searchInput !== '') {
-            window.location.href = './search.html'; // Chuyển hướng đến trang search.html
-        }
-    });
-    function signInWithGoogle() {
-        // Implement Google sign-in functionality
-    }
-
-    function signInWithFacebook() {
-        // Implement Facebook sign-in functionality
-    }
-    function cancel() {
-        // Implement cancel functionality (e.g., redirect to another page)
-    }
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./index.js"></script>
+<script src="./createAcc.js"></script>
 
 </html>

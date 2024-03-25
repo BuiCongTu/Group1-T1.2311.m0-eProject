@@ -4,39 +4,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <title>Group</title>
   <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="index.js">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.css" />
-  <!-- Bootstrap JS file -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
   <header>
-    <div class="container-fluid">
-      <div class="row align-items-center justify-content-between">
-        <div class="col-auto">
+    <!-- ----------------header---------------------- -->
+    <div class="container-fluid fixed-ontop">
+      <div class="row align-items-center">
+        <nav class="nav-1-header">
           <a href="./index.html"><img class="logo img-fluid" src="./Images/Logo/Logo.png" alt="logo" /></a>
-        </div>
-
-        <div class="col">
-          <form class="d-flex" id="searchForm">
-            <input id="searchInput" class="form-control me-3" type="text" placeholder="Search" />
-            <a class="btn btn-primary" href="./search.html">Search</a>
-
-          </form>
-        </div>
-
-        <div class="col-auto">
-          <a href="./payment.html"><img class="header-icon-addcart" src="./Images/icon/addcart.png"
+          <input id="searchInput" class="searchinput-nav-1-header" type="text" placeholder="Search..." />
+          <button class="btn btn-primary" type="submit">Search</button>
+          <a href="./payment.html"><img class="addcart-nav-1-header" src="./Images/icon/addcart.png"
               alt="add cart" /></a>
-          <a class="btn-header-login" href="log_in.html">Log in</a>
-        </div>
+          <form><a class="login-nav-1-header" href="log_in.html">Log in</a></form>
+        </nav>
+
       </div>
     </div>
-
-    <nav>
+    <!-- ----------------navbar---------------------- -->
+    <nav class="nav-2-header">
       <a href="./index.html" class="active">Home</a>
       <div class="btn-group">
         <button type="button" class="btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,80 +59,91 @@
       <a href="./contact.html" class="active">Contact Us</a>
     </nav>
   </header>
-
+  <!-- ----------------Main---------------------- -->
   <main>
+    <!--Scroll to Top -->
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top" style="display: none;">Top</button>
 
-    <p class="font-heading-content">Group X</p>
-    <p class="font-content-group">Group X group exercise class, a motivational gym solution for beginners not to get
-      bored
-    </p>
-    <p class="mian-group">You want to find an effective gym workout solution for newcomers, but you're not sure which
-      discipline to choose and where to workout,
-      or maybe you get bored when going to the gym. If so, try attending the Group X group workout class to experience
-      new sensations.</p>
-    <p class="mian-group1">Solution for beginners who don't like working out alone</p>
-    <p class="mian-group">The solution for beginners to work out at the gym helps them regain a beautiful figure and an
-      ideal body shape, which is the desire of most people. However,
-      the thought of having to exercise alone is truly boring and 'lazy'.</p>
-    <p class="mian-group1">Solutions for newcomers to the gym with a coach/Personal Trainer</p>
-    <div class="groupx"><img src="./Images/Image/groupx.jpg" alt="aa"></div>
-    </p>
-    <p class="mian-group">Is it necessary to hire a personal trainer (PT) to guide your workout? In fact, working out at
-      the gym with a PT offers many benefits:
-    <ul>
-      <li>Reducing your risk of injury: Understanding the exercises and techniques from the PT will help you truly avoid
-        the possibility
-        of injury during exercise and optimize the benefits of the exercises</li>
-      <li>Getting familiar with the gym quickly: You are new and tend to not like new things. The trainer will lay the
-        groundwork for you,
-        push you to start exercising and maintain a regular routine.</li>
-      <li>Making your workout more diverse: Trainers will provide more creative exercises to make working out
-        interesting for you. Working out
-        at the gym for new people will become more fun when you don't have to repeat boring exercises.</li>
-      <li>Helping you use your time effectively: they will help you save a lot of time that you wasted before by
-        exercising improperly and inefficiently.</li>
-      <li>Personalizing your gym workout program: assessing your fitness level, health conditions. Thus, helping you
-        build a suitable exercise routine and a
-        balanced diet to improve the effectiveness of your gym workout.</li>
-    </ul>
-    <p class="mian-group1">The solution to prevent laziness in newcomers to the gym is to find a companion.</p>
-    <p class="mian-group">It's very interesting when you and your friend go to the gym together, both of you will
-      motivate each other a lot during the training process. Instead of inviting each other to eat dishes that make you
-      gain weight, excess fat, why don't you both work out diligently together to have a beautiful body and better
-      health. Science has also proven that when you work out at the gym with someone, it significantly enhances the
-      effectiveness of the workout, more than twice as much as when you work out alone. At the same time,
-      having a companion will remind you to be more diligent and to eat more properly.</p>
-    <p class="mian-group">Solution for newcomers to the gym with the Group X program at Prime Fitness</p>
-    <div class="groupx"><img src="./Images/Image/groupx1.jpg" alt=""></div>
-    <p class="mian-group">As a high-end gym system, always changing to serve the
-      training needs of newcomers the best, Prime Fitness has built a workout structure,
-      classes suitable for the needs of each student, highlighted by the Group X class.
-      What is Group X? Group X, also known as Group Exercise, is a group training
-      program with dynamic music, incorporating the latest fitness methods under
-      the leadership of Lesmills-certified professional trainers. This is a form of
-      gym training for newcomers that is becoming very popular nowadays, chosen by
-      many students. Disciplines of Group X: The genres in Group X are very diverse,
-      providing support such as Dance, Zumba, Bodypump, Bodycombat, Bodybalance, RPM,
-      Bodyjam, CX-WORX,... Most Group X classes will be designed to suit all
-      audiences and training goals. Especially when coming to Prime Fitness, you
-      can experience classes in Group X with over 10 different genres, instructed
-      by professional trainers from both inside and outside the country, as well as
-      enjoy the best services at Prime Fitness. The effects of training in Group X:
-      Participating in Group X means you are participating in many new gym training
-      categories. But you may not know, how effective is training Group X? - Your entire body will ache,
-      but this is the stepping stone for you to achieve certain outcomes in the future.
-      You will gradually adapt to the training intensity of the disciplines in Group X,
-      alongside feeling each workout session, the calorie level in your body is gradually
-      burning off significantly. - The muscles in your body will become firmer and healthier.
-      By then, you have formed your exercise habits, always completing workouts in the most
-      comfortable spirit. In addition, your dream of a toned body shape gradually becomes a
-      reality, it will be prominently displayed on areas like the buttocks, waist, chest,
-      helping you become more confident in your body shape. Group X training costs: The demand
-      for gym training is increasing, but where to train with a suitable cost is also something
-      that many are looking for</p>
-
+    <div class="main-content">
+      <p class="font-head-title-center">Group X group exercise class, a motivational gym solution for beginners not to
+        get
+        bored
+      </p>
+      <p class="font-content-left">You want to find an effective gym workout solution for newcomers, but you're not sure
+        which
+        discipline to choose and where to workout,
+        or maybe you get bored when going to the gym. If so, try attending the Group X group workout class to experience
+        new sensations.</p>
+      <p class="font-sub-title-left">Solution for beginners who don't like working out alone</p>
+      <p class="font-content-left">The solution for beginners to work out at the gym helps them regain a beautiful
+        figure
+        and an
+        ideal body shape, which is the desire of most people. However,
+        the thought of having to exercise alone is truly boring and 'lazy'.</p>
+      <p class="font-sub-title-left">Solutions for newcomers to the gym with a coach/Personal Trainer</p>
+      <div class="img1"><img src="./Images/Image/groupx.jpg" alt="aa"></div>
+      </p>
+      <p class="font-content-left">Is it necessary to hire a personal trainer (PT) to guide your workout? In fact,
+        working
+        out at the gym with a PT offers many benefits:
+      <ul class="font-content-left">
+        <li>Reducing your risk of injury: Understanding the exercises and techniques from the PT will help you truly
+          avoid
+          the possibility
+          of injury during exercise and optimize the benefits of the exercises</li>
+        <li>Getting familiar with the gym quickly: You are new and tend to not like new things. The trainer will lay the
+          groundwork for you,
+          push you to start exercising and maintain a regular routine.</li>
+        <li>Making your workout more diverse: Trainers will provide more creative exercises to make working out
+          interesting for you. Working out
+          at the gym for new people will become more fun when you don't have to repeat boring exercises.</li>
+        <li>Helping you use your time effectively: they will help you save a lot of time that you wasted before by
+          exercising improperly and inefficiently.</li>
+        <li>Personalizing your gym workout program: assessing your fitness level, health conditions. Thus, helping you
+          build a suitable exercise routine and a
+          balanced diet to improve the effectiveness of your gym workout.</li>
+      </ul>
+      <p class="font-sub-title-left">The solution to prevent laziness in newcomers to the gym is to find a companion.
+      </p>
+      <p class="font-content-left">It's very interesting when you and your friend go to the gym together, both of you
+        will
+        motivate each other a lot during the training process. Instead of inviting each other to eat dishes that make
+        you
+        gain weight, excess fat, why don't you both work out diligently together to have a beautiful body and better
+        health. Science has also proven that when you work out at the gym with someone, it significantly enhances the
+        effectiveness of the workout, more than twice as much as when you work out alone. At the same time,
+        having a companion will remind you to be more diligent and to eat more properly.</p>
+      <p class="font-content-left">Solution for newcomers to the gym with the Group X program at Prime Fitness</p>
+      <div class="img1"><img src="./Images/Image/groupx1.jpg" alt=""></div>
+      <p class="font-content-left">As a high-end gym system, always changing to serve the
+        training needs of newcomers the best, Prime Fitness has built a workout structure,
+        classes suitable for the needs of each student, highlighted by the Group X class.
+        What is Group X? Group X, also known as Group Exercise, is a group training
+        program with dynamic music, incorporating the latest fitness methods under
+        the leadership of Lesmills-certified professional trainers. This is a form of
+        gym training for newcomers that is becoming very popular nowadays, chosen by
+        many students. Disciplines of Group X: The genres in Group X are very diverse,
+        providing support such as Dance, Zumba, Bodypump, Bodycombat, Bodybalance, RPM,
+        Bodyjam, CX-WORX,... Most Group X classes will be designed to suit all
+        audiences and training goals. Especially when coming to Prime Fitness, you
+        can experience classes in Group X with over 10 different genres, instructed
+        by professional trainers from both inside and outside the country, as well as
+        enjoy the best services at Prime Fitness. The effects of training in Group X:
+        Participating in Group X means you are participating in many new gym training
+        categories. But you may not know, how effective is training Group X? - Your entire body will ache,
+        but this is the stepping stone for you to achieve certain outcomes in the future.
+        You will gradually adapt to the training intensity of the disciplines in Group X,
+        alongside feeling each workout session, the calorie level in your body is gradually
+        burning off significantly. - The muscles in your body will become firmer and healthier.
+        By then, you have formed your exercise habits, always completing workouts in the most
+        comfortable spirit. In addition, your dream of a toned body shape gradually becomes a
+        reality, it will be prominently displayed on areas like the buttocks, waist, chest,
+        helping you become more confident in your body shape. Group X training costs: The demand
+        for gym training is increasing, but where to train with a suitable cost is also something
+        that many are looking for</p>
+    </div>
   </main>
-
+  <!-- ----------------foter---------------------- -->
   <footer class="footer">
     <div class="column-1-footer">
       <div class="col-auto">
@@ -160,41 +161,48 @@
           primefitness@gmail.com</a>
       </div>
       <div class="col-1-footer">
-        <img class="icon-footer" src="./Images/icon/open.png" alt="opening" />
+        <img class="icon-footer" src="./Images/icon/open-sign.png" alt="opening" />
         4:30 am - 10:30 pm
       </div>
     </div>
     <div class="column-2-footer">
       <div>
-        <p><a href="./aboutus.html" class="active">About Us</a></p>
-        <p><a href="./contact.html" class="active">Contact Us</a></p>
-        <p><a href="./groupX.html" class="active">Group X</a></p>
-        <p>
-          <a href="./privacyPolicy.html" class="active">Privacy Policy</a>
-        </p>
-        <p><a href="./siteMap.html" class="active">Site Map</a></p>
+        <a href="./aboutus.html" class="active link-column-2-footer">About Us</a>
+        <br>
+        <br>
+        <a href="./contact.html" class="active link-column-2-footer">Contact Us</a>
+        <br>
+        <br>
+        <a href="./groupX.html" class="active link-column-2-footer">Group X</a>
+        <br>
+        <br>
+        <a href="./privacyPolicy.html" class="active link-column-2-footer">Privacy Policy</a>
       </div>
     </div>
     <div class="column-3-footer">
       <div>
-        <iframe width="80%" height="200vw" frameborder="0" style="border: 0"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102446.96578567626!2dGEO_LONGITUDE!3dGEO_LATITUDE!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3AGEO_PLACE_NAME!2sGEO_PLACE_NAME!5e0!3m2!1sen!2sus!4v1647390718879!5m2!1sen!2sus"
-          allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="map-google"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3919.3221623584177!2d106.666276!3d10.786619000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDQ3JzExLjgiTiAxMDbCsDM5JzU4LjYiRQ!5e0!3m2!1svi!2s!4v1711216657941!5m2!1svi!2s"
+          frameborder="0"></iframe>
+        <div class="col-3-footer">
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/facebook.png" alt="facebook" />
+          </a>
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/instagram.png" alt="instagram" />
+          </a>
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/google.png" alt="Google" />
+          </a>
+        </div>
       </div>
     </div>
   </footer>
   <p class="copyright">&copy;Copyright 2024 by Prime Fitness</p>
 
 </body>
-<script>
-  document.getElementById('searchForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Ngăn chặn hành động mặc định của form
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="index.js"></script>
 
-    var searchInput = document.getElementById('searchInput').value.trim();
-    if (searchInput !== '') {
-      window.location.href = './search.html'; // Chuyển hướng đến trang search.html
-    }
-  });
-</script>
 
 </html>

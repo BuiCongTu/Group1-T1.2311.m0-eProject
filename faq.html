@@ -4,39 +4,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <title>FAQ</title>
   <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="index.js">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.css" />
-  <!-- Bootstrap JS file -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
   <header>
-    <div class="container-fluid">
-      <div class="row align-items-center justify-content-between">
-        <div class="col-auto">
+    <!-- ----------------header---------------------- -->
+    <div class="container-fluid fixed-ontop">
+      <div class="row align-items-center">
+        <nav class="nav-1-header">
           <a href="./index.html"><img class="logo img-fluid" src="./Images/Logo/Logo.png" alt="logo" /></a>
-        </div>
-
-        <div class="col">
-          <form class="d-flex" id="searchForm">
-            <input id="searchInput" class="form-control me-3" type="text" placeholder="Search" />
-            <a class="btn btn-primary" href="./search.html">Search</a>
-
-          </form>
-        </div>
-
-        <div class="col-auto">
-          <a href="./payment.html"><img class="header-icon-addcart" src="./Images/icon/addcart.png"
+          <input id="searchInput" class="searchinput-nav-1-header" type="text" placeholder="Search..." />
+          <button class="btn btn-primary" type="submit">Search</button>
+          <a href="./payment.html"><img class="addcart-nav-1-header" src="./Images/icon/addcart.png"
               alt="add cart" /></a>
-          <a class="btn-header-login" href="log_in.html">Log in</a>
-        </div>
+          <form><a class="login-nav-1-header" href="log_in.html">Log in</a></form>
+        </nav>
+
       </div>
     </div>
-
-    <nav>
+    <!-- ----------------navbar---------------------- -->
+    <nav class="nav-2-header">
       <a href="./index.html" class="active">Home</a>
       <div class="btn-group">
         <button type="button" class="btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,44 +59,57 @@
       <a href="./contact.html" class="active">Contact Us</a>
     </nav>
   </header>
-
+  <!-- ----------------Main---------------------- -->
   <main>
+    <!--Scroll to Top -->
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top" style="display: none;">Top</button>
 
-    <p class="font-heading-content">FAQ's</p>
-    <h1>What are the operating hours of the gym?</h1>
-    <p>Opening hours are from 5am to 10pm</p>
-    <h1>How many types of members or membership packages are available?</h1>
-    <p>You can refer here <button class="click">Member Ship's</button></p>
-    <h1>What services are provided at the gym?</h1>
-    <p>Workout equipment: Treadmill Exercise bike Stepper Ab crunch machine
-      Arm curl machine Group fitness classes: Yoga Pilates Zumba Cycling Aerobics
-      Kickboxing HIIT (High-Intensity Interval Training) Personal training: Personal training
-      services with professional trainers to create personalized workout plans and monitor progress.
-      Nutrition services: Nutrition advice and meal plans tailored to your workout goals. Steam room: Sauna Hot
-      tub Spa and massage services: Relaxation massage Steam room Outdoor physical activities: Tennis court Outdoor
-      swimming pool Basketball court Instructional classes like: Equipment orientation Yoga classes for beginners
-      Regular
-      workout instructional sessions Childcare services: Childcare services during workout time Community events and
-      activities:
-      Sports competitions Fundraising events Community workout sessions</p>
-    <h1>Is there a personal training program?</h1>
-    <p>We at Prime Fitness will always be with you</p>
-    <h1>Are there additional fees for special classes?</h1>
-    <p>You must upgrade your membership</p>
-    <h1>When is the gym's busiest time?</h1>
-    <p>Our busy period is from 6am to 9pm</p>
-    <h1>Are there weight loss or muscle building programs?</h1>
-    <p>Information about training or nutrition programs designed to help lose weight or build muscle.</p>
-    <h1>Are there any safety and hygiene regulations at the gym?</h1>
-    <p>Safety rules and measures such as using wipes, cleaning equipment after use, and instructions on how to use the
-      equipment safely</p>
-    <h1>Do you provide coaching services?</h1>
-    <p>Is there staff or trainers available to instruct on equipment use and workout planning?</p>
-    <h1> What is the policy on canceling subscriptions or suspending memberships? </h1>
-    <p>Please refer here <button class="click">Member Ship's</button></p>
+    <div class="main-content">
+      <div class="font-sub-title-left">What are the operating hours of the gym?</div>
+      <div class="font-content-left">Opening hours are from 5am to 10pm</div>
 
+      <div class="font-sub-title-left">How many types of members or membership packages are available?</div>
+      <div class="font-content-left">
+        <p>You can refer <a href="./memberShip.html">Member Ship's</a></p>
+      </div>
+
+      <div class="font-sub-title-left">What services are provided at the gym?</div>
+      <div class="font-content-left">Workout equipment: Treadmill Exercise bike Stepper Ab crunch machine
+        Arm curl machine Group fitness classes: Yoga Pilates Zumba Cycling Aerobics
+        Kickboxing HIIT (High-Intensity Interval Training) Personal training: Personal training
+        services with professional trainers to create personalized workout plans and monitor progress.
+        Nutrition services: Nutrition advice and meal plans tailored to your workout goals. Steam room: Sauna Hot
+        tub Spa and massage services: Relaxation massage Steam room Outdoor physical activities: Tennis court Outdoor
+        swimming pool Basketball court Instructional classes like: Equipment orientation Yoga classes for beginners
+        Regular
+        workout instructional sessions Childcare services: Childcare services during workout time Community events and
+        activities:
+        Sports competitions Fundraising events Community workout sessions
+      </div>
+      <div class="font-sub-title-left">Is there a personal training program?</h1>
+        <div class="font-content-left">We at Prime Fitness will always be with you</div>
+        <div class="font-sub-title-left">Are there additional fees for special classes?</div>
+        <div class="font-content-left">You must upgrade your membership</div>
+        <div class="font-sub-title-left">When is the gym's busiest time?</div>
+        <div class="font-content-left">Our busy period is from 6am to 9pm</div>
+        <div class="font-sub-title-left">Are there weight loss or muscle building programs?</div>
+        <div class="font-content-left">Information about training or nutrition programs designed to help lose weight or
+          build muscle.</div>
+        <div class="font-sub-title-left">Are there any safety and hygiene regulations at the gym?</div>
+        <div class="font-content-left">Safety rules and measures such as using wipes, cleaning equipment after use, and
+          instructions on how to use the
+          equipment safely</div>
+        <div class="font-sub-title-left">Do you provide coaching services?</div>
+        <div class="font-content-left">s there staff or trainers available to instruct on equipment use and workout
+          planning?</div>
+        <div class="font-sub-title-left"> What is the policy on canceling subscriptions or suspending memberships?
+        </div>
+        <div class="font-content-left">
+          <p>You refer here <a href="./memberShip.html">Member Ship's</a></p>
+        </div>
+      </div>
   </main>
-
+  <!-- ----------------foter---------------------- -->
   <footer class="footer">
     <div class="column-1-footer">
       <div class="col-auto">
@@ -124,41 +127,48 @@
           primefitness@gmail.com</a>
       </div>
       <div class="col-1-footer">
-        <img class="icon-footer" src="./Images/icon/open.png" alt="opening" />
+        <img class="icon-footer" src="./Images/icon/open-sign.png" alt="opening" />
         4:30 am - 10:30 pm
       </div>
     </div>
     <div class="column-2-footer">
       <div>
-        <p><a href="./aboutus.html" class="active">About Us</a></p>
-        <p><a href="./contact.html" class="active">Contact Us</a></p>
-        <p><a href="./groupX.html" class="active">Group X</a></p>
-        <p>
-          <a href="./privacyPolicy.html" class="active">Privacy Policy</a>
-        </p>
-        <p><a href="./siteMap.html" class="active">Site Map</a></p>
+        <a href="./aboutus.html" class="active link-column-2-footer">About Us</a>
+        <br>
+        <br>
+        <a href="./contact.html" class="active link-column-2-footer">Contact Us</a>
+        <br>
+        <br>
+        <a href="./groupX.html" class="active link-column-2-footer">Group X</a>
+        <br>
+        <br>
+        <a href="./privacyPolicy.html" class="active link-column-2-footer">Privacy Policy</a>
       </div>
     </div>
     <div class="column-3-footer">
       <div>
-        <iframe width="80%" height="200vw" frameborder="0" style="border: 0"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102446.96578567626!2dGEO_LONGITUDE!3dGEO_LATITUDE!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3AGEO_PLACE_NAME!2sGEO_PLACE_NAME!5e0!3m2!1sen!2sus!4v1647390718879!5m2!1sen!2sus"
-          allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="map-google"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3919.3221623584177!2d106.666276!3d10.786619000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDQ3JzExLjgiTiAxMDbCsDM5JzU4LjYiRQ!5e0!3m2!1svi!2s!4v1711216657941!5m2!1svi!2s"
+          frameborder="0"></iframe>
+        <div class="col-3-footer">
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/facebook.png" alt="facebook" />
+          </a>
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/instagram.png" alt="instagram" />
+          </a>
+          <a href="" class="col-3-footer-content">
+            <img class="icon-2-footer" src="./Images/icon/google.png" alt="Google" />
+          </a>
+        </div>
       </div>
     </div>
   </footer>
   <p class="copyright">&copy;Copyright 2024 by Prime Fitness</p>
 
 </body>
-<script>
-  document.getElementById('searchForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Ngăn chặn hành động mặc định của form
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="index.js"></script>
 
-    var searchInput = document.getElementById('searchInput').value.trim();
-    if (searchInput !== '') {
-      window.location.href = './search.html'; // Chuyển hướng đến trang search.html
-    }
-  });
-</script>
 
 </html>
