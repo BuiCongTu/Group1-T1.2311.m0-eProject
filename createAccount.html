@@ -2,254 +2,230 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Log In</title>
-  <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.css" />
 </head>
 
 <body>
-  <header>
-    <!-- ----------------header---------------------- -->
-    <div class="container-fluid fixed-ontop">
-      <div class="row align-items-center">
-        <nav class="nav-1-header">
-          <a href="./index.html"><img class="logo img-fluid" src="./Images/Logo/Logo.png" alt="logo" /></a>
-          <input id="searchInput" class="searchinput-nav-1-header" type="text" placeholder="Search..." />
-          <button class="btn btn-primary" type="submit">Search</button>
-          <a href="./payment.html"><img class="addcart-nav-1-header" src="./Images/icon/addcart.png"
-              alt="add cart" /></a>
-          <form><a class="login-nav-1-header" href="log_in.html">Log in</a></form>
-        </nav>
-      </div>
-    </div>
-    <!-- ----------------navbar---------------------- -->
-    <nav class="nav-2-header">
-      <a href="./index.html" class="active">Home</a>
-      <div class="btn-group">
-        <button type="button" class="btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          Fitness
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="./cycling.html">Cycling</a></li>
-          <li>
-            <a class="dropdown-item" href="./swimming.html">Swimming</a>
-          </li>
-          <li><a class="dropdown-item" href="./bodyFit.html">Body Fit</a></li>
-          <li>
-            <hr class="divider" />
-          </li>
-          <li>
-            <a class="dropdown-item" href="./sexy-dance.html">Sexy Dance</a>
-          </li>
-          <li><a class="dropdown-item" href="./zumba.html">Zumba</a></li>
-          <li>
-            <hr class="divider" />
-          </li>
-          <li><a class="dropdown-item" href="./spa.html">Spa</a></li>
-        </ul>
-      </div>
-
-      <a href="./groupX.html" class="active">Group X </a>
-      <a href="./memberShip.html" class="active">Member Ship</a>
-      <a href="./aboutus.html" class="active">About Us</a>
-      <a href="./faq.html" class="active">FAQ's</a>
-      <a href="./contact.html" class="active">Contact Us</a>
-    </nav>
-  </header>
-  <!-- ----------------Main---------------------- -->
-  <main>
-
-    <p class="font-sub-title-center">Create New Account</p>
-    <form id="registrationForm">
-      <table class="form-create-account">
-        <tr>
-          <td class="font-content-right">Member name<add style="color: red">*</add>
-          </td>
-          <td class="font-content-left">
-            <input type="text" id="loginname" required size="30" pattern="[a-zA-Z+\d+\S]{5,}"
-              title="Accepts lower case, upper case, numbers and no spaces - at least 5 characters" />
-            min=5 char(a-z, A-Z,0-9)
-          </td>
-        </tr>
-        <tr>
-          <td class="font-content-right">Password<add style="color: red">*</add>
-          </td>
-          <td class="font-content-left">
-            <input type="password" name="password" value="" id="password" size="30"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{5,}" />min=5(a-z + A-Z + 0-9 + symbols)
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>
-            <input type="checkbox" onclick="myFunction()">Show Password
-          </td>
-        </tr>
-        <tr>
-          <td class="font-content-right">
-            Password Confirm<add style="color: red">*</add>
-          </td>
-          <td class="font-content-left">
-            <input type="password" name="confirmpassword" id="confirmpassword" size="30" />
-          </td>
-        </tr>
-        <tr>
-          <td class="font-content-right">Full name<add style="color: red">*</add>
-          </td>
-          <td class="font-content-left">
-            <input type="text" name="fullname" id="fullname" size="50" />
-          </td>
-        </tr>
-        <tr>
-          <td class="font-content-right">Address<add style="color: red">*</add>
-          </td>
-          <td class="font-content-left">
-            <input type="text" name="address" id="address" size="50" />
-          </td>
-        </tr>
-        <tr>
-          <td class="font-content-right">Email<add style="color: red">*</add>
-          </td>
-          <td class="font-content-left">
-            <input type="email" name="email" id="email" size="50" required pattern="\w+@\w+\.[a-z]{2,3}"
-              title="email :example@example.com" />
-          </td>
-        </tr>
-        <tr>
-          <td class="font-content-right">Sex</td>
-          <td class="font-content-left">
-            <input type="radio" name="sex" class="sex" checked />Male
-            <input type="radio" name="sex" class="sex" />Female
-          </td>
-        </tr>
-        <tr>
-          <td class="font-content-right"><label for="dob">Date of birth</label></td>
-          <td class="font-content-left">
-            <select name="day" id="day"></select>
-            <select name="month" id="month"></select>
-            <select name="year" id="year"></select>
-          </td>
-        </tr>
-        <tr>
-          <td class="font-content-right">Country</td>
-          <td class="font-content-left">
-            <select name="country" id="country"></select>
-          </td>
-        </tr>
-        <tr>
-          <td class="font-content-right">Phone number</td>
-          <td class="font-content-left">
-            <input type="tel" name="phone" id="phone" size="20" />
-          </td>
-        </tr>
-        <tr>
-          <td class="font-content-right">Content</td>
-          <td class="font-content-left">
-            <textarea name="content" id="content" cols="30" rows="5"></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" class="font-content-center">
-            <a href="" onclick="signInWithGoogle()">Sign in with Google</a> or
-            <a href="" onclick="signInWithFacebook()">Sign in with Facebook</a>
-          </td>
-          <td>
-
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" class="font-content-center">
-            <div class="btn btn-primary" onclick="validateForm()" style="font-size: 1.7vw;">Submit</div>
-            <div class="btn btn-primary" onclick="cancel()" style="font-size: 1.7vw;"></a>Cancel</div>
-          </td>
-          <!-- <td></td> -->
-        </tr>
-      </table>
-    </form>
-    </div>
-    <h1>.</h1>
-  </main>
-  <!-- ----------------foter---------------------- -->
-  <footer class="footer">
-    <div class="column-1-footer">
-      <div class="col-auto">
-        <a href="./index.html"><img class="logo img-fluid" src="./Images/Logo/Logo.png" alt="logo" /></a>
-      </div>
-      <div class="col-1-footer">
-        <a href="tel:+84123456789" class="col-1-footer-content">
-          <img class="icon-footer" src="./Images/icon/telephone.png" alt="Telephone" />
-          +84 123 456 789
-        </a>
-      </div>
-      <div class="col-1-footer">
-        <img class="icon-footer" src="./Images/icon/email.png" alt="Email" />
-        <a href="mailto: primefitness@gmail.com?subject=ask html" class="col-1-footer-content">
-          primefitness@gmail.com</a>
-      </div>
-      <div class="col-1-footer">
-        <img class="icon-footer" src="./Images/icon/open-sign.png" alt="opening" />
-        4:30 am - 10:30 pm
-      </div>
-    </div>
-    <div class="column-2-footer">
-      <div>
-        <a href="./aboutus.html" class="active link-column-2-footer">About Us</a>
-        <br>
-        <br>
-        <a href="./contact.html" class="active link-column-2-footer">Contact Us</a>
-        <br>
-        <br>
-        <a href="./groupX.html" class="active link-column-2-footer">Group X</a>
-        <br>
-        <br>
-        <a href="./privacyPolicy.html" class="active link-column-2-footer">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="column-3-footer">
-      <div>
-        <iframe class="map-google"
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3919.3221623584177!2d106.666276!3d10.786619000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDQ3JzExLjgiTiAxMDbCsDM5JzU4LjYiRQ!5e0!3m2!1svi!2s!4v1711216657941!5m2!1svi!2s"
-          frameborder="0"></iframe>
-        <div class="col-3-footer">
-          <a href="" class="col-3-footer-content">
-            <img class="icon-2-footer" src="./Images/icon/facebook.png" alt="facebook" />
-          </a>
-          <a href="" class="col-3-footer-content">
-            <img class="icon-2-footer" src="./Images/icon/instagram.png" alt="instagram" />
-          </a>
-          <a href="" class="col-3-footer-content">
-            <img class="icon-2-footer" src="./Images/icon/google.png" alt="Google" />
-          </a>
+    <header>
+        <!-- ----------------header---------------------- -->
+        <div class="container-fluid fixed-ontop">
+            <div class="row align-items-center">
+                <nav class="nav-1-header">
+                    <a href="./index.html"><img class="logo img-fluid" src="./Images/Logo/Logo.png" alt="logo" /></a>
+                    <input id="searchInput" class="searchinput-nav-1-header" type="text" placeholder="Search..." />
+                    <button class="btn btn-primary" type="submit">Search</button>
+                    <a href="./payment.html"><img class="addcart-nav-1-header" src="./Images/icon/addcart.png"
+                            alt="add cart" /></a>
+                    <form><a class="login-nav-1-header" href="log_in.html">Log in</a></form>
+                </nav>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-1-footer">
-      <img class="icon-footer" src="./Images/icon/open.png" alt="opening" />
-      4:30 am - 10:30 pm
-    </div>
-    </div>
-    <div class="column-2-footer">
-      <div>
-        <p><a href="./aboutus.html" class="active">About Us</a></p>
-        <p><a href="./contact.html" class="active">Contact Us</a></p>
-        <p><a href="./groupX.html" class="active">Group X</a></p>
-        <p>
-          <a href="./privacyPolicy.html" class="active">Privacy Policy</a>
-        </p>
-        <p><a href="./siteMap.html" class="active">Site Map</a></p>
-      </div>
-    </div>
-    <div class="column-3-footer">
-      <div>
-        <iframe width="80%" height="200vw" frameborder="0" style="border: 0"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102446.96578567626!2dGEO_LONGITUDE!3dGEO_LATITUDE!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3AGEO_PLACE_NAME!2sGEO_PLACE_NAME!5e0!3m2!1sen!2sus!4v1647390718879!5m2!1sen!2sus"
-          allowfullscreen="" loading="lazy"></iframe>
-      </div>
-    </div>
-  </footer>
-  <p class="copyright">&copy;Copyright 2024 by Prime Fitness</p>
+        <!-- ----------------navbar---------------------- -->
+        <nav class="nav-2-header">
+            <a href="./index.html" class="active">Home</a>
+            <div class="btn-group">
+                <button type="button" class="btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Fitness
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="./cycling.html">Cycling</a></li>
+                    <li>
+                        <a class="dropdown-item" href="./swimming.html">Swimming</a>
+                    </li>
+                    <li><a class="dropdown-item" href="./bodyFit.html">Body Fit</a></li>
+                    <li>
+                        <hr class="divider" />
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="./sexy-dance.html">Sexy Dance</a>
+                    </li>
+                    <li><a class="dropdown-item" href="./zumba.html">Zumba</a></li>
+                    <li>
+                        <hr class="divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="./spa.html">Spa</a></li>
+                </ul>
+            </div>
+
+            <a href="./groupX.html" class="active">Group X </a>
+            <a href="./memberShip.html" class="active">Member Ship</a>
+            <a href="./aboutus.html" class="active">About Us</a>
+            <a href="./faq.html" class="active">FAQ's</a>
+            <a href="./contact.html" class="active">Contact Us</a>
+        </nav>
+    </header>
+    <!-- ----------------Main---------------------- -->
+    <main>
+
+        <p class="font-sub-title-center">Create New Account</p>
+        <form id="registrationForm">
+            <table class="form-create-account">
+                <tr>
+                    <td class="font-content-right">Member name<add style="color: red">*</add>
+                    </td>
+                    <td class="font-content-left">
+                        <input type="text" id="loginname" required size="30" pattern="[a-zA-Z+\d+\S]{5,}"
+                            title="Accepts lower case, upper case, numbers and no spaces - at least 5 characters" />
+                        min=5 char(a-z, A-Z,0-9)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Password<add style="color: red">*</add>
+                    </td>
+                    <td class="font-content-left">
+                        <input type="password" name="password" value="" id="password" size="30"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{5,}" />min=5(a-z + A-Z + 0-9 + symbols)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" onclick="myFunction()">Show Password
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">
+                        Password Confirm<add style="color: red">*</add>
+                    </td>
+                    <td class="font-content-left">
+                        <input type="password" name="confirmpassword" id="confirmpassword" size="30" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Full name<add style="color: red">*</add>
+                    </td>
+                    <td class="font-content-left">
+                        <input type="text" name="fullname" id="fullname" size="50" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Address<add style="color: red">*</add>
+                    </td>
+                    <td class="font-content-left">
+                        <input type="text" name="address" id="address" size="50" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Email<add style="color: red">*</add>
+                    </td>
+                    <td class="font-content-left">
+                        <input type="email" name="email" id="email" size="50" required pattern="\w+@\w+\.[a-z]{2,3}"
+                            title="email :example@example.com" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Sex</td>
+                    <td class="font-content-left">
+                        <input type="radio" name="sex" class="sex" checked />Male
+                        <input type="radio" name="sex" class="sex" />Female
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right"><label for="dob">Date of birth</label></td>
+                    <td class="font-content-left">
+                        <select name="day" id="day"></select>
+                        <select name="month" id="month"></select>
+                        <select name="year" id="year"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Country</td>
+                    <td class="font-content-left">
+                        <select name="country" id="country"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Phone number</td>
+                    <td class="font-content-left">
+                        <input type="tel" name="phone" id="phone" size="20" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-content-right">Content</td>
+                    <td class="font-content-left">
+                        <textarea name="content" id="content" cols="30" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="font-content-center">
+                        <a href="" onclick="signInWithGoogle()">Sign in with Google</a> or
+                        <a href="" onclick="signInWithFacebook()">Sign in with Facebook</a>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="font-content-center">
+                        <div class="btn btn-primary" onclick="validateForm()" style="font-size: 1.7vw;">Submit</div>
+                        <div class="btn btn-primary" onclick="cancel()" style="font-size: 1.7vw;"></a>Cancel</div>
+                    </td>
+                    <!-- <td></td> -->
+                </tr>
+            </table>
+        </form>
+    </main>
+    <!-- ----------------foter---------------------- -->
+    <footer class="footer">
+        <div class="column-1-footer">
+            <div class="col-auto">
+                <a href="./index.html"><img class="logo img-fluid" src="./Images/Logo/Logo.png" alt="logo" /></a>
+            </div>
+            <div class="col-1-footer">
+                <a href="tel:+84123456789" class="col-1-footer-content">
+                    <img class="icon-footer" src="./Images/icon/telephone.png" alt="Telephone" />
+                    +84 123 456 789
+                </a>
+            </div>
+            <div class="col-1-footer">
+                <img class="icon-footer" src="./Images/icon/email.png" alt="Email" />
+                <a href="mailto: primefitness@gmail.com?subject=ask html" class="col-1-footer-content">
+                    primefitness@gmail.com</a>
+            </div>
+            <div class="col-1-footer">
+                <img class="icon-footer" src="./Images/icon/open-sign.png" alt="opening" />
+                4:30 am - 10:30 pm
+            </div>
+        </div>
+        <div class="column-2-footer">
+            <div>
+                <a href="./aboutus.html" class="active link-column-2-footer">About Us</a>
+                <br>
+                <br>
+                <a href="./contact.html" class="active link-column-2-footer">Contact Us</a>
+                <br>
+                <br>
+                <a href="./groupX.html" class="active link-column-2-footer">Group X</a>
+                <br>
+                <br>
+                <a href="./privacyPolicy.html" class="active link-column-2-footer">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="column-3-footer">
+            <div>
+                <iframe class="map-google"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3919.3221623584177!2d106.666276!3d10.786619000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDQ3JzExLjgiTiAxMDbCsDM5JzU4LjYiRQ!5e0!3m2!1svi!2s!4v1711216657941!5m2!1svi!2s"
+                    frameborder="0"></iframe>
+                <div class="col-3-footer">
+                    <a href="" class="col-3-footer-content">
+                        <img class="icon-2-footer" src="./Images/icon/facebook.png" alt="facebook" />
+                    </a>
+                    <a href="" class="col-3-footer-content">
+                        <img class="icon-2-footer" src="./Images/icon/instagram.png" alt="instagram" />
+                    </a>
+                    <a href="" class="col-3-footer-content">
+                        <img class="icon-2-footer" src="./Images/icon/google.png" alt="Google" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <p class="copyright">&copy;Copyright 2024 by Prime Fitness</p>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
