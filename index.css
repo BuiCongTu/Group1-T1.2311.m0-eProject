@@ -88,6 +88,9 @@ nav a:hover {
 .active {
   color: #e6df44;
 }
+.nav-2-header.active {
+  display: block; /* Hiển thị nav 2 header khi được kích hoạt */
+}
 .dropdown-menu {
   background-color: #063852 !important;
   width: fit-content !important;

@@ -1,14 +1,3 @@
-function signInWithGoogle() {
-  window.location.href = "http://gmail.com";
-}
-
-function signInWithFacebook() {
-  window.location.href = "http://facebook.com";
-}
-function cancel() {
-  // Implement cancel functionality (e.g., redirect to another page)
-}
-
 function registerUser() {
   // Lấy dữ liệu từ form
   const memberName = document.getElementById("member_name").value;
@@ -24,7 +13,7 @@ function registerUser() {
 
   // Kiểm tra mật khẩu và xác nhận mật khẩu
   if (password !== confirmPassword) {
-    alert("Mật khẩu và xác nhận mật khẩu không khớp!");
+    alert("pasword");
     return;
   }
 

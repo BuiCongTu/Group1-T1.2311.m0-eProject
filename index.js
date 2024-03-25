@@ -1,13 +1,3 @@
-document
-  .getElementById("searchForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Ngăn chặn hành động mặc định của form
-
-    var searchInput = document.getElementById("searchInput").value.trim();
-    if (searchInput !== "") {
-      window.location.href = "./search.html"; // Chuyển hướng đến trang search.html
-    }
-  });
 // Lắng nghe sự kiện scroll
 window.onscroll = function () {
   scrollFunction();
@@ -37,11 +27,6 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-//screen min-width 576px
-
-$(".navbar-toggler").click(function () {
-  $("#navbarNavDropdown").toggleClass("show");
-});
 function cancel() {
   window.location.href = "./index.html";
 }
