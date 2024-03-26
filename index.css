@@ -72,10 +72,12 @@ a.login-nav-1-header:hover {
 nav {
   display: flex;
   justify-content: space-around;
+  text-align: center;
   background-color: #063852;
   font-size: 1.7vw;
   padding-left: 10vw;
-  padding-top: 2vw;
+  padding-top: min-height 5px;
+  padding-bottom: min-height 5px;
 }
 nav a {
   color: #e6df44;
@@ -206,7 +208,10 @@ footer {
   margin-left: 2vw;
   margin-right: 2vw;
 }
-
+.img {
+  max-width: 100%;
+  max-height: 100%;
+}
 /* hinh anh full frame */
 .img-frame-width-full {
   max-width: 100%;
@@ -222,20 +227,12 @@ footer {
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;
-  width: 70vw;
+  width: 40vw;
   background-color: #f0f0f0;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-.img1 {
-  text-align: center;
-}
-.img {
-  max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước của container */
-  max-height: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước của container */
-  height: auto; /* Đảm bảo tỷ lệ khung hình được bảo toàn */
 }
 /* image le phai */
 .img-right-subject {
@@ -251,6 +248,7 @@ footer {
   display: inline-block;
   margin-left: 8vw;
 }
+
 /* nut nhan dong y- submit */
 a.btn.btn-primary,
 .btn-submit-cancel {
@@ -261,13 +259,14 @@ a.btn.btn-primary,
 /* noi dung tieu de trai */
 .font-head-title-left {
   font-size: 2.22vw;
-  font-weight: bolder;
+  font-weight: bold;
   text-align: left;
 }
 /* content le trai */
 .font-content-frame-left {
   font-size: 1.7vw;
   text-align: left;
+  font-weight: lighter;
   width: 20vw;
   height: auto;
 }
@@ -284,64 +283,42 @@ a.btn.btn-primary,
   padding-left: 25vw;
   padding-top: 5vw;
   padding-bottom: 5vw;
-  /* border: solid 1px #063852; */
 }
-/* 
-.social-item {
-  color: azure;
-  float: top 10rem;
-  font-size: 30px;
-  line-height: 1.5rem;
-  margin: 1.3rem;
-} */
-/* bodyfit */
-
-/* .ontop { */
-/* width: 80%; Chiều rộng của container */
-/* max-width: 200px; Chiều rộng tối đa của container
-  margin: 10px auto; Canh giữa container
-  padding: 20px; Khoảng cách bên trong container
-  background-color: #e6df44; Màu nền của container
-  border: 1px solid #ccc; Đường viền của container
-  border-radius: 10%; Đường cong viền
-  text-align: center;
-} */
 
 /* tieu de center */
 .font-head-title-center {
   font-size: 3.43vw;
-  font-weight: bolder;
   text-align: center;
 }
 .font-sub-title-center {
   font-size: 2.22vw;
-  font-weight: bolder;
   text-align: center;
 }
 .font-sub-title-left {
   font-size: 2.22vw;
-  font-weight: bolder;
   text-align: left;
 }
 .font-sub-title-right {
   font-size: 2.22vw;
-  font-weight: bolder;
   text-align: right;
 }
 /* noi dung ben trai */
 .font-content-right {
   font-size: 1.7vw;
   text-align: right;
+  font-weight: lighter;
 }
 /* noi dung ben phai */
 .font-content-left {
   font-size: 1.7vw;
   text-align: left;
+  font-weight: lighter;
 }
 /* noi dung center */
 .font-content-center {
   font-size: 1.7vw;
   text-align: center;
+  font-weight: lighter;
 }
 .form-center-body {
   display: flex;
@@ -422,7 +399,7 @@ form#logInForm {
   text-align: center;
 }
 /* =============================bo========================== */
-.main-bodyfit1 {
+/* .main-bodyfit1 {
   text-align: center;
   font-size: 30px;
 }
@@ -436,10 +413,10 @@ form#logInForm {
   font-weight: bolder;
   text-align: center;
   color: #063852;
-  font-family: Arial, Helvetica, sans-serif;
-  /* border: 0;
+  font-family: Arial, Helvetica, sans-serif; */
+/* border: 0;
   border: #063852; */
-}
+/* }
 .imgsexy {
   text-align: center;
 }
@@ -455,11 +432,11 @@ form#logInForm {
   text-align: center;
   margin: 0;
   font-size: 30px;
-}
+} */
 /* .zumba {
   text-align: center;
 } */
-.mian-swimming {
+/* .mian-swimming {
   text-align: center;
   margin: 0;
   font-size: 30px;
@@ -468,10 +445,10 @@ form#logInForm {
   font-size: 2.22vw;
   font-weight: bolder;
   color: #063852;
-  font-family: Arial, Helvetica, sans-serif;
-  /* border: 0;
+  font-family: Arial, Helvetica, sans-serif; */
+/* border: 0;
   border: #063852; */
-}
+/* }
 .main-cycling {
   text-align: center;
   margin: 0;
@@ -485,9 +462,10 @@ form#logInForm {
   font-weight: bolder;
   color: #063852;
   font-family: Arial, Helvetica, sans-serif;
-  /* border: 0;
+  font-weight: lighter; */
+/* border: 0;
   border: #063852; */
-}
+/* }
 .mian-group,
 ul {
   text-align: center;
@@ -498,19 +476,19 @@ ul {
   font-size: 1.8vw;
   font-weight: bolder;
   color: #063852;
-  font-family: Arial, Helvetica, sans-serif;
-  /* border: 0;
+  font-family: Arial, Helvetica, sans-serif; */
+/* border: 0;
   border: #063852; */
-}
+/* }
 
 .font-heading-member {
   font-size: 2.8vw;
-  font-weight: bolder;
+  font-weight:bold
   color: #063852;
-  font-family: Arial, Helvetica, sans-serif;
-  /* border: 0;
+  font-family: Arial, Helvetica, sans-serif; */
+/* border: 0;
   border: #063852; */
-}
+/* }
 .mian-member {
   text-align: center;
   margin: 0;
@@ -543,6 +521,6 @@ ul {
   padding: 8px;
   margin-top: 5px;
   /* border: 1px solid #ccc; */
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+/* border-radius: 4px;
+  box-sizing: border-box; */
+/* }  */

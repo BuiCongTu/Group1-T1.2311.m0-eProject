@@ -1,3 +1,21 @@
+// search
+var searchInput = document.getElementById("searchInput");
+var searchButton = document.querySelector(".btn-primary");
+
+// Bắt sự kiện khi người dùng nhấn Enter trong trường input
+searchInput.addEventListener("keypress", function (event) {
+  // Kiểm tra xem phím Enter đã được nhấn
+  if (event.key === "Enter") {
+    // Chuyển hướng đến trang search.html
+    window.location.href = "./search.html";
+  }
+});
+
+// Bắt sự kiện khi người dùng nhấn vào nút search
+searchButton.addEventListener("click", function () {
+  // Chuyển hướng đến trang search.html
+  window.location.href = "./search.html";
+});
 // Lắng nghe sự kiện scroll
 window.onscroll = function () {
   scrollFunction();
