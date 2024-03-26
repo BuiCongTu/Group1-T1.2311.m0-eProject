@@ -13,8 +13,6 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  /* background-color: #fff; Thay đổi màu nền tùy theo nhu cầu */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho navbar */
 }
 /* ----------------------------------------nav 1 ------------------------*/
 .logo {
@@ -33,6 +31,7 @@ header {
   font-size: 1.7vw;
   padding-left: 2vw;
   padding-right: 2vw;
+  padding-top: 10px;
 }
 .searchinput-nav-1-header {
   color: #cfcccc;
@@ -89,6 +88,10 @@ nav a:hover {
 
 .active {
   color: #e6df44;
+}
+.nav-2-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .nav-2-header.active {
   display: block; /* Hiển thị nav 2 header khi được kích hoạt */
