@@ -66,6 +66,35 @@ function validateForm() {
     alert("Welcome to become a Prime Fitness member");
   }
 }
+// for contact form
+function validateFormContact() {
+  var title = document.getElementById("title-contact").value.trim();
+  var email = document.getElementById("email-contact").value.trim();
+  var phone = document.getElementById("phone").value.trim();
+  var description = document.getElementById("content").value.trim();
+
+  // Kiểm tra xem các trường đã được nhập hay chưa
+  if (title === "") {
+    alert("Please fill in the 'Title' field.");
+    document.getElementById("title-contact").focus();
+    return false;
+  } else if (!isValidEmail(email)) {
+    alert("Please fill in the 'Email' field. Ex: contact@example.com");
+    document.getElementById("email-contact").focus();
+    return false;
+  } else if (phone === "") {
+    alert("Please fill in the 'Phone' field."); //
+    document.getElementById("phone").focus();
+    return false;
+  } else if (description === "") {
+    alert("Please fill in the 'Description' field.");
+    document.getElementById("content").focus();
+    return false;
+  } else {
+    alert("Thank you! Your form submitted successfully!");
+    window.location.href = "index.html";
+  }
+}
 
 function isValidPassword(password) {
   // Hàm kiểm tra mật khẩu có ít nhất một chữ thường, một chữ hoa, một ký tự đặc biệt và một số.
