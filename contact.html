@@ -54,7 +54,7 @@
       </div>
 
       <a href="./groupX.html" class="active">Group X </a>
-      <a href="./memberShip.html" class="active">Member Ship</a>
+      <a href="./memberShip.html" class="active">Membership</a>
       <a href="./aboutus.html" class="active">About Us</a>
       <a href="./faq.html" class="active">FAQ's</a>
       <a href="./contact.html" class="active">Contact Us</a>
@@ -80,6 +80,14 @@
               <input class="td-table-left" type="text" id="title-contact" placeholder="Enter your topic" size="30"
                 autofocus pattern="[a-zA-Z]{3,10}" title="Title accepts only alphabet characters, min 3 max 10"
                 required />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label class="td-table-left" for="fullname">Full Name:<span style="color: red">*</span></label>
+            </td>
+            <td>
+              <input class="td-table-left-creat" type="text" name="fullname" id="fullname" size="30" required />
             </td>
           </tr>
 
@@ -109,7 +117,8 @@
                 <span style="color: red">*</span></label>
             </td>
             <td>
-              <textarea name="description-contact" id="content" cols="30" rows="5" required></textarea>
+              <textarea class="td-table-left" name="description-contact" id="content" cols="30" rows="5"
+                required></textarea>
             </td>
           </tr>
 

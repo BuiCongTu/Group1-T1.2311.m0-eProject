@@ -283,7 +283,8 @@ a.btn.btn-primary,
 }
 /* index */
 .space-content-left-body {
-  padding-left: 25vw;
+  padding-left: 15vw;
+  padding-right: 3vw;
   padding-top: 5vw;
   padding-bottom: 5vw;
 }

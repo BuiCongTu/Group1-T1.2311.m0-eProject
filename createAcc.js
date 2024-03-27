@@ -137,6 +137,7 @@ function resetPassword() {
 // for contact form
 function validateFormContact() {
   var title = document.getElementById("title-contact").value.trim();
+  var fullname = document.getElementById("fullname").value.trim();
   var email = document.getElementById("email-contact").value.trim();
   var phone = document.getElementById("phone").value.trim();
   var description = document.getElementById("content").value.trim();
@@ -145,6 +146,10 @@ function validateFormContact() {
   if (title === "") {
     alert("Please fill in the 'Title' field.");
     document.getElementById("title-contact").focus();
+    return false;
+  } else if (fullname === "") {
+    alert("Please fill in the 'Full Name' field.");
+    document.getElementById("fullname").focus();
     return false;
   } else if (!isValidEmail(email)) {
     alert("Please fill in the 'Email' field. Ex: contact@example.com");
