@@ -24,9 +24,18 @@ function formatPhoneNumber() {
 
   inputPhone.value = formattedPhoneNumber;
 }
+
 // xu ly form
 
-function validateForm() {
+// Ham scroll và focus đến field chưa nhập data
+function scrollToTop(elementId) {
+  var element = document.getElementById(elementId);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+function validateFormcreateAccount() {
   // Lấy giá trị từ các trường
   var loginname = document.getElementById("loginname").value;
   var password = document.getElementById("password").value;
@@ -34,36 +43,94 @@ function validateForm() {
   var fullname = document.getElementById("fullname").value;
   var address = document.getElementById("address").value;
   var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value.trim();
   var year = document.getElementById("year").value;
 
   // Kiểm tra điều kiện
   if (loginname.length < 5 || /\s/.test(loginname)) {
     alert(
-      "Accepts lower case, upper case, numbers and no spaces - at least 5 characters"
+      "Member Name Error: Pls fill in the data Field with at least 5 characters (accepts lower case, upper case, numbers and no spaces"
     );
-    focusOnInput("loginname");
+    document.getElementById("loginname").focus();
+    scrollToTop("loginname"); // Cuộn đến trường loginname
+    return false;
   } else if (password.length < 5 || !isValidPassword(password)) {
     alert(
-      "Password must have at least 5 characters and must include uppercase letters, lowercase letters, numbers and special characters"
+      "Password Error: must have at least 5 characters and must include uppercase letters, lowercase letters, numbers and special characters"
     );
-    focusOnInput("password");
+    document.getElementById("password").focus();
+    scrollToTop("password"); // Cuộn đến trường password
+    return false;
   } else if (confirmpassword !== password) {
-    alert("Confirmation password does not match.");
-    focusOnInput("confirmpassword");
+    alert("Error: Confirmation password does not match.");
+    document.getElementById("confirmpassword").focus();
+    scrollToTop("confirmpassword"); // Cuộn đến trường confirmpassword
+    return false;
   } else if (fullname === "") {
-    alert("Please enter full name.");
-    focusOnInput("fullname");
+    alert("Error: Please enter full name.");
+    document.getElementById("fullname").focus();
+    scrollToTop("fullname"); // Cuộn đến trường fullname
+    return false;
   } else if (address === "") {
-    alert("Please enter your address.");
-    focusOnInput("address");
+    alert("Error: Please enter your address.");
+    document.getElementById("address").focus();
+    scrollToTop("address"); // Cuộn đến trường address
+    return false;
   } else if (!isValidEmail(email)) {
-    alert("Please enter your email.");
-    focusOnInput("email");
+    alert("Error: Please enter your email. examples: example@example.com");
+    document.getElementById("email").focus();
+    scrollToTop("email"); // Cuộn đến trường email
+    return false;
+  } else if (phone.length < 10) {
+    document.getElementById("phone").focus();
+    alert("Error: Please enter a phone number from 10 to 12 digits.");
+    scrollToTop("phone"); // Cuộn đến trường phone
+    return false;
   } else if (!isValidBirthdate(year)) {
     alert("Date of birth is not valid for leap years.");
-    focusOnInput("year");
+    document.getElementById("year").focus();
+    scrollToTop("year"); // Cuộn đến trường year
+    return false;
   } else {
     alert("Welcome to become a Prime Fitness member");
+    window.location.href = "index.html";
+  }
+}
+function validateLogInForm() {
+  // Lấy giá trị từ các trường nhập tên đăng nhập và email
+  var memberName = document.getElementById("membername").value;
+  var password = document.getElementById("password").value;
+
+  // Kiểm tra xem các trường đã được nhập hay chưa
+  if (memberName === "") {
+    alert("Field 1: Please enter Member name"); // Thông báo nếu các trường chưa được nhập
+    return false; // Ngăn chặn gửi form nếu các trường chưa được nhập
+  } else {
+    if (password === "") {
+      alert("Password Error: Pls enter your password");
+      document.getElementById("password").focus();
+    } else {
+      alert("Welcome to become a Prime Fitness member");
+      window.location.href = "index.html";
+    }
+  }
+}
+function resetPassword() {
+  var password = document.getElementById("password").value;
+  var confirmpassword = document.getElementById("confirmpassword").value;
+  if (password.length < 5 || !isValidPassword(password)) {
+    alert(
+      "Password Error: must have at least 5 characters and must include uppercase letters, lowercase letters, numbers and special characters"
+    );
+    document.getElementById("password").focus();
+  } else if (confirmpassword !== password) {
+    alert("Error: Confirmation password does not match.");
+    document.getElementById("confirmpassword").focus();
+    scrollToTop("confirmpassword"); // Cuộn đến trường confirmpassword
+    return false;
+  } else {
+    alert("Completed password reset");
+    window.location.href = "./log_in.html";
   }
 }
 // for contact form
@@ -119,10 +186,6 @@ function isValidBirthdate(year) {
   // Hàm kiểm tra năm nhuận (đơn giản, không xử lý đầy đủ)
   var year = new Date(year).getFullYear();
   return year % 4 === 0;
-}
-function focusOnInput(inputId) {
-  // Di chuyển con trỏ chuột đến ô nhập liệu có id tương ứng
-  document.getElementById(inputId).focus();
 }
 
 // ham lay ngay thang nam
@@ -241,11 +304,8 @@ function populateCityDropdown() {
   }
 }
 
-// Gọi hàm để khi nhấn cancel
+// Gọi hàm để khi nhấn show password
 populateCityDropdown();
-function cancel() {
-  window.location.href = "./index.html";
-}
 function myFunction() {
   var x = document.getElementById("password");
   if (x.type === "password") {
@@ -253,16 +313,6 @@ function myFunction() {
   } else {
     x.type = "password";
   }
-}
-function signInWithGoogle() {
-  window.location.href = "http://gmail.com";
-}
-
-function signInWithFacebook() {
-  window.location.href = "http://facebook.com";
-}
-function cancel() {
-  // Implement cancel functionality (e.g., redirect to another page)
 }
 
 function registerUser() {

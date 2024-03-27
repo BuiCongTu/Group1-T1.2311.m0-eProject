@@ -337,7 +337,7 @@ a.btn.btn-primary,
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-form#registrationForm {
+/* form#registrationForm {
   display: flex;
   justify-content: center;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
@@ -350,7 +350,7 @@ form#registrationForm {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
+} */
 form#contact-form {
   display: block;
   flex-direction: column;
@@ -360,10 +360,18 @@ form#contact-form {
 .td-table-left {
   text-align: left;
   margin-right: 5vw;
-  margin-bottom: 2vw;
-  font-size: 1.17vw;
+  margin-bottom: 1vw;
+  font-size: 1.32vw;
   font-weight: lighter;
   vertical-align: top;
+  border-radius: 5px;
+}
+.td-table-left-creat {
+  text-align: left;
+  margin-right: 5vw;
+  margin-bottom: 1vw;
+  font-size: 1.32vw;
+  font-weight: lighter;
   border-radius: 5px;
 }
 form#forgetPassword {
@@ -403,8 +411,8 @@ form#logInForm {
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 5vw;
-  width: 50vw;
-  background-color: #f5f3f3;
+  width: 45vw;
+  background-color: #eef0dd;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
