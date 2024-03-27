@@ -96,6 +96,7 @@ function validateFormcreateAccount() {
     window.location.href = "index.html";
   }
 }
+
 function validateLogInForm() {
   // Lấy giá trị từ các trường nhập tên đăng nhập và email
   var memberName = document.getElementById("membername").value;
