@@ -30,10 +30,8 @@
           <a href="./payment.html"><img class="addcart-nav-1-header" src="./Images/icon/addcart.png"
               alt="add cart" /></a>
           <form>
-            <form>
-              <a href="log_in.html" class="login-nav-1-header" id="loginShow">Log in</a>
-              <p id="loginShow" style="color: rgb(207, 124, 9); font-size: 1.32vw;"></p>
-            </form>
+            <div><a href="log_in.html" class="login-nav-1-header" id="loginShow">Log in</a></div>
+            <div><a href="" class="login-nav-1-header" id="logoutButton">Log Out</a></div>
           </form>
         </nav>
 
@@ -233,10 +231,15 @@
             cancelButtonColor: "#d33",
             confirmButtonText: "Ok",
           }).then((result) => {
+            if (result.isConfirmed) {
+              // document.getElementById('logoutButton').style.display = 'flex';
 
-            document.getElementById("loginShow").innerText = "Welcome, " + memberName;
-            console.log("loginShow")
-            window.location.href = "./log_in.html";
+              // document.getElementById('loginShow').style.display = 'none';
+              // Lưu memberName vào localStorage
+              localStorage.setItem('loggedInMember', JSON.stringify({ memberName: memberName }));
+              // Điều hướng người dùng đến trang index.html
+              window.location.href = "./index.html";
+            }
           });
         } else {
           Swal.fire({

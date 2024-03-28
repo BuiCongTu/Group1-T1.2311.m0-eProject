@@ -426,3 +426,14 @@ form#logInForm {
   width: 8vw;
   text-align: center;
 }
+/* Định dạng flexbox */
+.flex-container {
+  display: flex;
+  width: 70vw;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1vw 10vw 1vw 10vw;
+}
+.flex-item {
+  margin: 0 10px; /* Khoảng cách giữa hai div */
+}

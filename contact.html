@@ -30,7 +30,8 @@
           <a href="./payment.html"><img class="addcart-nav-1-header" src="./Images/icon/addcart.png"
               alt="add cart" /></a>
           <form>
-            <a class="login-nav-1-header" href="log_in.html">Log in</a>
+            <div><a href="log_in.html" class="login-nav-1-header" id="loginShow">Log in</a></div>
+            <div><a href="" class="login-nav-1-header" id="logoutButton">Log Out</a></div>
           </form>
         </nav>
       </div>
@@ -271,6 +272,14 @@
       document.getElementById("content").focus();
       return false;
     } else {
+      var formContact = {
+        title: title,
+        fullname: fullname,
+        email: email,
+        phone: phone,
+        description: description,
+      };
+      localStorage.setItem('formContact', JSON.stringify(formContact));
       Swal.fire({
         title: "Are you sure?",
         html: "<table style='width:100%; text-align: left;'>" +

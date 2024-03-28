@@ -29,7 +29,10 @@
           <button class="btn btn-primary" type="submit">Search</button>
           <a href="./payment.html"><img class="addcart-nav-1-header" src="./Images/icon/addcart.png"
               alt="add cart" /></a>
-          <form><a class="login-nav-1-header" href="log_in.html">Log in</a></form>
+          <form>
+            <div><a href="log_in.html" class="login-nav-1-header" id="loginShow">Log in</a></div>
+            <div><a href="" class="login-nav-1-header" id="logoutButton">Log Out</a></div>
+          </form>
         </nav>
 
       </div>
@@ -80,10 +83,10 @@
           <!-- row 1 -->
           <tr>
             <td>
-              <label class="td-table-left" for="loginname">Member Name:</label>
+              <label class="td-table-left" for="membername">Member Name:</label>
             </td>
             <td>
-              <input class="td-table-left" type="text" id="loginname" placeholder="Tommy1A" size="30" autofocus />
+              <input class="td-table-left" type="text" id="membername" placeholder="Tommy1A" size="30" autofocus />
             </td>
           </tr>
           <!-- row 2 -->
@@ -272,7 +275,7 @@
 
   function displayFormData() {
     // Lấy giá trị từ các trường form
-    var memberName = document.getElementById("loginname").value;
+    var memberName = document.getElementById("membername").value;
     var fullName = document.getElementById("fullname").value;
     var email = document.getElementById("email-contact").value;
     var phone = document.getElementById("phone").value;
@@ -320,7 +323,18 @@
       document.getElementById("phone").focus();
       return false;
     } else {
-      // Hiển thị thông tin bằng Swal.fire
+      var formPayment = {
+        memberName: memberName,
+        fullName: fullName,
+        email: email,
+        phone: phone,
+        gender: gender,
+        product: product,
+        quantity: quantity,
+        total: total,
+        description: description
+      };
+      localStorage.setItem('formPayment', JSON.stringify(formPayment));
       Swal.fire({
         title: "Your Cart:",
         html: "<table style='width:100%; text-align: left;'>" +
@@ -352,6 +366,15 @@
       });
     }
   }
+  document.addEventListener("DOMContentLoaded", function () {
+    // data localStorage tồn tại chưa
+    if (localStorage.getItem('formData')) {
+      // Lấy dữ liệu
+      var formData = JSON.parse(localStorage.getItem('formData'));
+      // Điền dữ liệu vào các trường nhập liệu
+      document.getElementById("membername").value = formData.membername;
+    }
+  });
 </script>
 
 

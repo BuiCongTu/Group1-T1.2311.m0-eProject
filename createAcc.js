@@ -104,7 +104,7 @@ function populateDropdown(startYear, endYear, elementId) {
     if (year === 1980) {
       option.selected = true;
     }
-    // dropdown.add(option);
+    dropdown.add(option);
   }
 }
 // Populate Days dropdown with options 1-31
@@ -193,7 +193,7 @@ function populateCityDropdown() {
     var option = document.createElement("option");
     option.value = cities[i];
     option.text = cities[i];
-    // dropdown.add(option);
+    dropdown.add(option);
   }
 }
 

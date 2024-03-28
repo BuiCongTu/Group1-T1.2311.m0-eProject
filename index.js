@@ -50,3 +50,29 @@ function topFunction() {
 function cancel() {
   window.location.href = "./index.html";
 }
+document.addEventListener("DOMContentLoaded", function () {
+  // Kiểm tra xem có dữ liệu về thành viên đã đăng nhập trong localStorage hay không
+  if (localStorage.getItem('loggedInMember')) {
+    // Lấy tên thành viên từ localStorage
+    var loggedInMember = JSON.parse(localStorage.getItem('loggedInMember'));
+    var memberName = loggedInMember.memberName;
+
+    // Thay đổi nội dung của thẻ loginShow thành memberName
+    document.getElementById('loginShow').innerText = "Welcome, " + memberName;
+    // Hiển thị nút Log Out
+    document.getElementById('logoutButton').style.display = 'block';
+  } else {
+    // Ẩn nút Log Out nếu không có thành viên đăng nhập
+    document.getElementById('logoutButton').style.display = 'none';
+  }
+});
+
+var logoutButton = document.getElementById('logoutButton');
+logoutButton.addEventListener('click', function () {
+  // Xóa thông tin thành viên đăng nhập khỏi localStorage
+  localStorage.removeItem('loggedInMember');
+  // Điều hướng người dùng về trang đăng nhập
+  window.location.href = "./log_in.html";
+});
+
+
