@@ -286,8 +286,6 @@
     var gender = document.querySelector('input[name="gender"]:checked')
       ? document.querySelector('input[name="gender"]:checked').value
       : "";
-
-
     // Kiểm tra điều kiện
     if (membername.length < 5 || /\s/.test(membername)) {
       Swal.fire({
@@ -321,7 +319,6 @@
         confirmButtonText: "Try again",
       })
       document.getElementById("confirmpassword").focus();
-
       return false;
     } else if (fullname === "") {
       Swal.fire({
@@ -355,7 +352,6 @@
         confirmButtonText: "Try again",
       })
       document.getElementById("email").focus();
-
       return false;
     } else if (phone.length < 10) {
       Swal.fire({
@@ -378,7 +374,6 @@
         confirmButtonText: "Try again",
       })
       document.getElementById("year").focus();
-
       return false;
     } else {
       // Lưu thông tin vào localStorage
@@ -429,7 +424,6 @@
       });
     }
   }
-
 </script>
 
 </html>
