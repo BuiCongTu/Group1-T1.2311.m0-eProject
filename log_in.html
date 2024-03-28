@@ -203,19 +203,19 @@
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Ok, i see!",
+        confirmButtonText: "Try again",
       })
       return false;
     }
     else {
       if (password === "") {
         Swal.fire({
-          title: " Is required",
+          title: " Incorrect",
           text: "Please enter Password",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
-          confirmButtonText: "Ok, uhm!",
+          confirmButtonText: "Try again",
         })
         document.getElementById("password").focus();
       } else {
@@ -226,7 +226,7 @@
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Ok, ok...!",
+            confirmButtonText: "Try again",
           }).then((result) => {
             window.location.href = "index.html";
           });
@@ -237,7 +237,7 @@
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Ok, i'm try!",
+            confirmButtonText: "Try again",
           })
         }
       }

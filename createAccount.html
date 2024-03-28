@@ -290,46 +290,93 @@
 
     // Kiểm tra điều kiện
     if (membername.length < 5 || /\s/.test(membername)) {
-      alert(
-        "Member Name Error: Pls fill in the data Field with at least 5 characters (accepts lower case, upper case, numbers and no spaces"
-      );
+      Swal.fire({
+        title: " Incorrect",
+        text: "Please fill in the 'Member Name' field with at least 5 characters (accepts lower case, upper case, numbers and no spaces",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Try again",
+      })
       document.getElementById("membername").focus();
-
       return false;
     } else if (password.length < 5 || !isValidPassword(password)) {
-      alert(
-        "Password Error: must have at least 5 characters and must include uppercase letters, lowercase letters, numbers and special characters"
-      );
+      Swal.fire({
+        title: " Incorrect",
+        text: "Please enter Password must have at least 5 characters and must include uppercase letters, lowercase letters, numbers and special characters",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Try again",
+      })
       document.getElementById("password").focus();
-
       return false;
     } else if (confirmpassword !== password) {
-      alert("Error: Confirmation password does not match.");
+      Swal.fire({
+        title: " Incorrect",
+        text: "Confirmation password does not match.",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Try again",
+      })
       document.getElementById("confirmpassword").focus();
 
       return false;
     } else if (fullname === "") {
-      alert("Error: Please enter full name.");
+      Swal.fire({
+        title: " Incorret",
+        text: "Please fill in the 'Full Name' field.",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Try again",
+      })
       document.getElementById("fullname").focus();
-
       return false;
     } else if (address === "") {
-      alert("Error: Please enter your address.");
+      Swal.fire({
+        title: " Incorret",
+        text: "Please enter your address.",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Try again",
+      })
       document.getElementById("address").focus();
-
       return false;
     } else if (!isValidEmail(email)) {
-      alert("Error: Please enter your email. examples: example@example.com");
+      Swal.fire({
+        title: " Incorret",
+        text: "Please fill in the 'Email' field. Ex: contact@example.com",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Try again",
+      })
       document.getElementById("email").focus();
 
       return false;
     } else if (phone.length < 10) {
+      Swal.fire({
+        title: " Incorret",
+        text: "Please enter a phone number from 10 to 12 digits.",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Try again",
+      })
       document.getElementById("phone").focus();
-      alert("Error: Please enter a phone number from 10 to 12 digits.");
-
       return false;
     } else if (!isValidBirthdate(year)) {
-      alert("Date of birth is not valid for leap years.");
+      Swal.fire({
+        title: " Incorret",
+        text: "Date of birth is not valid for leap years.",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Try again",
+      })
       document.getElementById("year").focus();
 
       return false;

@@ -55,61 +55,7 @@ function resetPassword() {
   }
 }
 // for contact form
-function validateFormContact() {
-  var title = document.getElementById("title-contact").value.trim();
-  var fullname = document.getElementById("fullname").value.trim();
-  var email = document.getElementById("email-contact").value.trim();
-  var phone = document.getElementById("phone").value.trim();
-  var description = document.getElementById("content").value.trim();
 
-  // Kiểm tra xem các trường đã được nhập hay chưa
-  if (title === "") {
-    alert("Please fill in the 'Title' field.");
-    document.getElementById("title-contact").focus();
-    return false;
-  } else if (fullname === "") {
-    alert("Please fill in the 'Full Name' field.");
-    document.getElementById("fullname").focus();
-    return false;
-  } else if (!isValidEmail(email)) {
-    alert("Please fill in the 'Email' field. Ex: contact@example.com");
-    document.getElementById("email-contact").focus();
-    return false;
-  } else if (phone === "") {
-    alert("Please fill in the 'Phone' field."); //
-    document.getElementById("phone").focus();
-    return false;
-  } else if (description === "") {
-    alert("Please fill in the 'Description' field.");
-    document.getElementById("content").focus();
-    return false;
-  } else {
-    Swal.fire({
-      title: "Are you sure?",
-      html: "<table style='width:100%; text-align: left;'>" +
-        "<tr><td>Title:</td><td>" + title + "</td></tr>" +
-        "<tr><td>Full Name:</td><td>" + fullname + "</td></tr>" +
-        "<tr><td>Email:</td><td>" + email + "</td></tr>" +
-        "<tr><td>Phone:</td><td>" + phone + "</td></tr>" +
-        "<tr><td>Description:</td><td>" + description + "</td></tr></table>",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, send it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: "Sending....",
-          text: "Your form has been submitted",
-          icon: "success",
-        }).then(() => {
-          // Chuyển hướng đến trang index.html
-          window.location.href = "index.html";
-        });
-      }
-    });
-  }
-}
 
 function isValidPassword(password) {
   // Hàm kiểm tra mật khẩu có ít nhất một chữ thường, một chữ hoa, một ký tự đặc biệt và một số.
@@ -260,32 +206,4 @@ function myFunction() {
   } else {
     x.type = "password";
   }
-}
-
-function registerUser() {
-  // Lấy dữ liệu từ form
-  const memberName = document.getElementById("member_name").value;
-  const fullName = document.getElementById("full_name").value;
-  const gender = document.getElementById("gender").value;
-  const dobDay = document.getElementsByName("dob_day").value;
-  const dobMonth = document.getElementsByName("month").value;
-  const dobYear = document.getElementsByName("year").value;
-  const phoneNumber = document.getElementById("phone").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirm_password").value;
-
-  // Kiểm tra mật khẩu và xác nhận mật khẩu
-  if (password !== confirmPassword) {
-    alert("Mật khẩu và xác nhận mật khẩu không khớp!");
-    return;
-  }
-
-  // Gửi dữ liệu đăng ký đến server (trong ví dụ này chỉ là mock API)
-  // Đây là nơi bạn sẽ gửi dữ liệu đăng ký đến server thực tế để xử lý
-
-  // Hiển thị thông báo hoặc chuyển hướng người dùng sau khi đăng ký thành công
-  alert("Đăng ký thành công!");
-  // Chuyển hướng người dùng đến trang đăng nhập hoặc trang khác
-  window.location.href = "./log_in.html";
 }
