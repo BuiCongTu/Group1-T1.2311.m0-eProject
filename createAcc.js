@@ -35,25 +35,7 @@ function scrollToTop(elementId) {
   }
 }
 
-function validateLogInForm() {
-  // Lấy giá trị từ các trường nhập tên đăng nhập và email
-  var memberName = document.getElementById("membername").value;
-  var password = document.getElementById("password").value;
 
-  // Kiểm tra xem các trường đã được nhập hay chưa
-  if (memberName === "") {
-    alert("Field 1: Please enter Member name"); // Thông báo nếu các trường chưa được nhập
-    return false; // Ngăn chặn gửi form nếu các trường chưa được nhập
-  } else {
-    if (password === "") {
-      alert("Password Error: Pls enter your password");
-      document.getElementById("password").focus();
-    } else {
-      alert("Welcome to become a Prime Fitness member");
-      window.location.href = "index.html";
-    }
-  }
-}
 function resetPassword() {
   var password = document.getElementById("password").value;
   var confirmpassword = document.getElementById("confirmpassword").value;

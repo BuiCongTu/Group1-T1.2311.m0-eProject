@@ -294,44 +294,44 @@
         "Member Name Error: Pls fill in the data Field with at least 5 characters (accepts lower case, upper case, numbers and no spaces"
       );
       document.getElementById("membername").focus();
-      scrollToTop("membername"); // Cuộn đến trường membername
+
       return false;
     } else if (password.length < 5 || !isValidPassword(password)) {
       alert(
         "Password Error: must have at least 5 characters and must include uppercase letters, lowercase letters, numbers and special characters"
       );
       document.getElementById("password").focus();
-      scrollToTop("password"); // Cuộn đến trường password
+
       return false;
     } else if (confirmpassword !== password) {
       alert("Error: Confirmation password does not match.");
       document.getElementById("confirmpassword").focus();
-      scrollToTop("confirmpassword"); // Cuộn đến trường confirmpassword
+
       return false;
     } else if (fullname === "") {
       alert("Error: Please enter full name.");
       document.getElementById("fullname").focus();
-      scrollToTop("fullname"); // Cuộn đến trường fullname
+
       return false;
     } else if (address === "") {
       alert("Error: Please enter your address.");
       document.getElementById("address").focus();
-      scrollToTop("address"); // Cuộn đến trường address
+
       return false;
     } else if (!isValidEmail(email)) {
       alert("Error: Please enter your email. examples: example@example.com");
       document.getElementById("email").focus();
-      scrollToTop("email"); // Cuộn đến trường email
+
       return false;
     } else if (phone.length < 10) {
       document.getElementById("phone").focus();
       alert("Error: Please enter a phone number from 10 to 12 digits.");
-      scrollToTop("phone"); // Cuộn đến trường phone
+
       return false;
     } else if (!isValidBirthdate(year)) {
       alert("Date of birth is not valid for leap years.");
       document.getElementById("year").focus();
-      scrollToTop("year"); // Cuộn đến trường year
+
       return false;
     } else {
       // Lưu thông tin vào localStorage
@@ -343,7 +343,7 @@
         email: email,
         phone: phone,
         gender: gender,
-        birthday: day + month + year,
+        birthday: day + "/" + month + "/" + year,
         city: city,
         content: content
       };
@@ -370,7 +370,6 @@
         confirmButtonText: "Yes, send it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          // Hiển thị thông báo "Sending..." và sau đó chuyển hướng đến trang index.html
           Swal.fire({
             title: "Sending....",
             text: "Your form has been submitted",
