@@ -5,8 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create Account</title>
+  <!-- CSS -->
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+  <!-- Default theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+  <!-- Semantic UI theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+  <!-- cdn Awesome icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
 </head>
 
 <body style="background-color:rgb(225, 235, 244);">
@@ -75,10 +84,10 @@
           <!-- row 1 -->
           <tr>
             <td>
-              <label class="td-table-left" for="loginname">Member Name:<span style="color: red">*</span></label>
+              <label class="td-table-left" for="membername">Member Name:<span style="color: red">*</span></label>
             </td>
             <td>
-              <input class="td-table-left" type="text" id="loginname" placeholder="Tommy1A" size="30" autofocus
+              <input class="td-table-left" type="text" id="membername" placeholder="Tommy1A" size="30" autofocus
                 pattern="[a-zA-Z+\d+\S]{5,}"
                 title="Accepts lower case, upper case, numbers and no spaces - at least 5 characters" required />
             </td>
@@ -123,7 +132,7 @@
           <!-- row 6 -->
           <tr>
             <td>
-              <label class="td-table-left" for="address">Full Name:<span style="color: red">*</span></label>
+              <label class="td-table-left" for="address">Address:<span style="color: red">*</span></label>
             </td>
             <td>
               <input class="td-table-left-creat" type="text" name="address" id="address" size="30" required />
@@ -152,9 +161,9 @@
 
           <tr>
             <td class="td-table-left-creat">Gender:</td>
-            <td style="font-size: 1.32vw; font-weight: lighter;">
-              <input type="radio" name="sex" class="sex" checked />Male
-              <input type="radio" name="sex" class="sex" />Female
+            <td style="font-size: 1.32vw; font-weight: lighter;" id="gender">
+              <input type="radio" name="gender" value="Male" checked />Male
+              <input type="radio" name="gender" value="Female" />Female
             </td>
           </tr>
           <tr>
@@ -169,10 +178,10 @@
           </tr>
           <tr>
             <td>
-              <label class="td-table-left" for="country">Country:</label>
+              <label class="td-table-left" for="city">City:</label>
             </td>
             <td>
-              <select class="td-table-left-creat" name="country" id="country"></select>
+              <select class="td-table-left-creat" name="city" id="city"></select>
             </td>
           </tr>
 
@@ -251,9 +260,130 @@
   </footer>
   <p class="copyright">&copy;Copyright 2024 by Prime Fitness</p>
 </body>
+<!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="index.js"></script>
 <script src="createAcc.js"></script>
+<script>
+  function validateFormcreateAccount() {
+    // Lấy giá trị từ các trường
+    var membername = document.getElementById("membername").value;
+    var password = document.getElementById("password").value;
+    var confirmpassword = document.getElementById("confirmpassword").value;
+    var fullname = document.getElementById("fullname").value;
+    var address = document.getElementById("address").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value.trim();
+    var day = document.getElementById("day").value;
+    var month = document.getElementById("month").value;
+    var year = document.getElementById("year").value;
+    var city = document.getElementById("city").value;
+    var content = document.getElementById("content").value.trim();
 
+    var gender = document.querySelector('input[name="gender"]:checked')
+      ? document.querySelector('input[name="gender"]:checked').value
+      : "";
+
+
+    // Kiểm tra điều kiện
+    if (membername.length < 5 || /\s/.test(membername)) {
+      alert(
+        "Member Name Error: Pls fill in the data Field with at least 5 characters (accepts lower case, upper case, numbers and no spaces"
+      );
+      document.getElementById("membername").focus();
+      scrollToTop("membername"); // Cuộn đến trường membername
+      return false;
+    } else if (password.length < 5 || !isValidPassword(password)) {
+      alert(
+        "Password Error: must have at least 5 characters and must include uppercase letters, lowercase letters, numbers and special characters"
+      );
+      document.getElementById("password").focus();
+      scrollToTop("password"); // Cuộn đến trường password
+      return false;
+    } else if (confirmpassword !== password) {
+      alert("Error: Confirmation password does not match.");
+      document.getElementById("confirmpassword").focus();
+      scrollToTop("confirmpassword"); // Cuộn đến trường confirmpassword
+      return false;
+    } else if (fullname === "") {
+      alert("Error: Please enter full name.");
+      document.getElementById("fullname").focus();
+      scrollToTop("fullname"); // Cuộn đến trường fullname
+      return false;
+    } else if (address === "") {
+      alert("Error: Please enter your address.");
+      document.getElementById("address").focus();
+      scrollToTop("address"); // Cuộn đến trường address
+      return false;
+    } else if (!isValidEmail(email)) {
+      alert("Error: Please enter your email. examples: example@example.com");
+      document.getElementById("email").focus();
+      scrollToTop("email"); // Cuộn đến trường email
+      return false;
+    } else if (phone.length < 10) {
+      document.getElementById("phone").focus();
+      alert("Error: Please enter a phone number from 10 to 12 digits.");
+      scrollToTop("phone"); // Cuộn đến trường phone
+      return false;
+    } else if (!isValidBirthdate(year)) {
+      alert("Date of birth is not valid for leap years.");
+      document.getElementById("year").focus();
+      scrollToTop("year"); // Cuộn đến trường year
+      return false;
+    } else {
+      // Lưu thông tin vào localStorage
+      var formData = {
+        membername: membername,
+        password: password,
+        fullname: fullname,
+        address: address,
+        email: email,
+        phone: phone,
+        gender: gender,
+        birthday: day + month + year,
+        city: city,
+        content: content
+      };
+
+      localStorage.setItem('formData', JSON.stringify(formData));
+
+      // Hiển thị thông tin bằng Swal.fire
+      Swal.fire({
+        title: "Your Cart:",
+        html: "<table style='width:100%; text-align: left;'>" +
+          "<tr><td>Member Name:</td><td>" + membername + "</td></tr>" +
+          "<tr><td>Full Name:</td><td>" + fullname + "</td></tr>" +
+          "<tr><td>Address:</td><td>" + address + "</td></tr>" +
+          "<tr><td>Email:</td><td>" + email + "</td></tr>" +
+          "<tr><td>Phone:</td><td>" + phone + "</td></tr>" +
+          "<tr><td>Gender:</td><td>" + gender + "</td></tr>" +
+          "<tr><td>Date of Birth:</td><td>" + day + "/" + month + "/" + year + "</td></tr>" +
+          "<tr><td>City:</td><td>" + city + "</td></tr>" +
+          "<tr><td>Content:</td><td>" + content + "</td></tr>" +
+          "</table>",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, send it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Hiển thị thông báo "Sending..." và sau đó chuyển hướng đến trang index.html
+          Swal.fire({
+            title: "Sending....",
+            text: "Your form has been submitted",
+            icon: "success",
+          }).then(() => {
+            // Chuyển hướng đến trang index.html
+            window.location.href = "index.html";
+          });
+        }
+      });
+    }
+  }
+
+</script>
 
 </html>

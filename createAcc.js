@@ -12,14 +12,14 @@ function formatPhoneNumber() {
 
   var formattedPhoneNumber =
     phoneNumber.length >= 3 &&
-    ((phoneNumber.length >= 8 && phoneNumber.substring(8, 10) === "789") ||
-      (phoneNumber.length >= 10 && phoneNumber.substring(10) !== "789"))
+      ((phoneNumber.length >= 8 && phoneNumber.substring(8, 10) === "789") ||
+        (phoneNumber.length >= 10 && phoneNumber.substring(10) !== "789"))
       ? phoneNumber.substring(0, 3) +
-        "-" +
-        phoneNumber.substring(3, 8) +
-        "(" +
-        phoneNumber.substring(8) +
-        ")"
+      "-" +
+      phoneNumber.substring(3, 8) +
+      "(" +
+      phoneNumber.substring(8) +
+      ")"
       : phoneNumber;
 
   inputPhone.value = formattedPhoneNumber;
@@ -32,68 +32,6 @@ function scrollToTop(elementId) {
   var element = document.getElementById(elementId);
   if (element) {
     element.scrollIntoView({ behavior: "smooth" });
-  }
-}
-
-function validateFormcreateAccount() {
-  // Lấy giá trị từ các trường
-  var loginname = document.getElementById("loginname").value;
-  var password = document.getElementById("password").value;
-  var confirmpassword = document.getElementById("confirmpassword").value;
-  var fullname = document.getElementById("fullname").value;
-  var address = document.getElementById("address").value;
-  var email = document.getElementById("email").value;
-  var phone = document.getElementById("phone").value.trim();
-  var year = document.getElementById("year").value;
-
-  // Kiểm tra điều kiện
-  if (loginname.length < 5 || /\s/.test(loginname)) {
-    alert(
-      "Member Name Error: Pls fill in the data Field with at least 5 characters (accepts lower case, upper case, numbers and no spaces"
-    );
-    document.getElementById("loginname").focus();
-    scrollToTop("loginname"); // Cuộn đến trường loginname
-    return false;
-  } else if (password.length < 5 || !isValidPassword(password)) {
-    alert(
-      "Password Error: must have at least 5 characters and must include uppercase letters, lowercase letters, numbers and special characters"
-    );
-    document.getElementById("password").focus();
-    scrollToTop("password"); // Cuộn đến trường password
-    return false;
-  } else if (confirmpassword !== password) {
-    alert("Error: Confirmation password does not match.");
-    document.getElementById("confirmpassword").focus();
-    scrollToTop("confirmpassword"); // Cuộn đến trường confirmpassword
-    return false;
-  } else if (fullname === "") {
-    alert("Error: Please enter full name.");
-    document.getElementById("fullname").focus();
-    scrollToTop("fullname"); // Cuộn đến trường fullname
-    return false;
-  } else if (address === "") {
-    alert("Error: Please enter your address.");
-    document.getElementById("address").focus();
-    scrollToTop("address"); // Cuộn đến trường address
-    return false;
-  } else if (!isValidEmail(email)) {
-    alert("Error: Please enter your email. examples: example@example.com");
-    document.getElementById("email").focus();
-    scrollToTop("email"); // Cuộn đến trường email
-    return false;
-  } else if (phone.length < 10) {
-    document.getElementById("phone").focus();
-    alert("Error: Please enter a phone number from 10 to 12 digits.");
-    scrollToTop("phone"); // Cuộn đến trường phone
-    return false;
-  } else if (!isValidBirthdate(year)) {
-    alert("Date of birth is not valid for leap years.");
-    document.getElementById("year").focus();
-    scrollToTop("year"); // Cuộn đến trường year
-    return false;
-  } else {
-    alert("Welcome to become a Prime Fitness member");
-    window.location.href = "index.html";
   }
 }
 
@@ -164,8 +102,30 @@ function validateFormContact() {
     document.getElementById("content").focus();
     return false;
   } else {
-    alert("Thank you! Your form submitted successfully!");
-    window.location.href = "index.html";
+    Swal.fire({
+      title: "Are you sure?",
+      html: "<table style='width:100%; text-align: left;'>" +
+        "<tr><td>Title:</td><td>" + title + "</td></tr>" +
+        "<tr><td>Full Name:</td><td>" + fullname + "</td></tr>" +
+        "<tr><td>Email:</td><td>" + email + "</td></tr>" +
+        "<tr><td>Phone:</td><td>" + phone + "</td></tr>" +
+        "<tr><td>Description:</td><td>" + description + "</td></tr></table>",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, send it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Sending....",
+          text: "Your form has been submitted",
+          icon: "success",
+        }).then(() => {
+          // Chuyển hướng đến trang index.html
+          window.location.href = "index.html";
+        });
+      }
+    });
   }
 }
 
@@ -214,7 +174,6 @@ function populateDropdown(startYear, endYear, elementId) {
     option.text = year;
     option.value = year;
     if (year === 1980) {
-      // Kiểm tra nếu năm là 1980 thì đặt làm mặc định
       option.selected = true;
     }
     dropdown.add(option);
@@ -229,7 +188,7 @@ populateDropdown(1, 12, "month");
 // Populate Years dropdown with options from current year to 1900
 populateDropdown(1950, new Date().getFullYear(), "year");
 
-// Country
+// city
 var cities = [
   "Hồ Chí Minh",
   "Hà Nội",
@@ -300,7 +259,7 @@ var cities = [
 
 // Hàm để tạo các tùy chọn cho dropdown
 function populateCityDropdown() {
-  var dropdown = document.getElementById("country");
+  var dropdown = document.getElementById("city");
 
   for (var i = 0; i < cities.length; i++) {
     var option = document.createElement("option");
@@ -346,5 +305,5 @@ function registerUser() {
   // Hiển thị thông báo hoặc chuyển hướng người dùng sau khi đăng ký thành công
   alert("Đăng ký thành công!");
   // Chuyển hướng người dùng đến trang đăng nhập hoặc trang khác
-  window.location.href = "log_in.html";
+  window.location.href = "./log_in.html";
 }
