@@ -195,7 +195,8 @@
 
           <tr>
             <td class="td-table-left-creat">
-              <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+              <input type="checkbox" name="remember" id="rememberMe" style="margin-bottom:15px">
+              Remember me
             </td>
           </tr>
           <tr>
@@ -295,10 +296,12 @@
     var year = document.getElementById("year").value;
     var city = document.getElementById("city").value;
     var content = document.getElementById("content").value.trim();
+    var rememberMeCheckbox = document.getElementById("rememberMe");
 
     var gender = document.querySelector('input[name="gender"]:checked')
       ? document.querySelector('input[name="gender"]:checked').value
       : "";
+
     // Kiểm tra điều kiện
     if (membername.length < 5 || /\s/.test(membername)) {
       Swal.fire({
@@ -377,64 +380,107 @@
       })
       document.getElementById("phone").focus();
       return false;
-    } else if (!isValidBirthdate(year)) {
+    } else if (!isValidDate(day, month, year)) {
       Swal.fire({
-        title: " Incorret",
-        text: "Date of birth is not valid for leap years.",
+        title: " Incorrect",
+        text: "Date of birth is not valid.",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "Try again",
-      })
-      document.getElementById("year").focus();
+      });
+      document.getElementById("day").focus();
       return false;
     } else {
-      // Lưu thông tin vào localStorage
-      var formData = {
-        membername: membername,
-        password: password,
-        fullname: fullname,
-        address: address,
-        email: email,
-        phone: phone,
-        gender: gender,
-        birthday: day + "/" + month + "/" + year,
-        city: city,
-        content: content
-      };
+      if (!rememberMeCheckbox.checked) {
+        Swal.fire({
+          title: " Incorrect",
+          text: "You must agree to the Terms & Privacy ",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Try again",
+        });
+        return false;
+      } else {
+        // Lưu thông tin vào localStorage
+        var formData = {
+          membername: membername,
+          password: password,
+          fullname: fullname,
+          address: address,
+          email: email,
+          phone: phone,
+          gender: gender,
+          birthday: day + "/" + month + "/" + year,
+          city: city,
+          content: content
+        };
 
-      localStorage.setItem('formData', JSON.stringify(formData));
+        localStorage.setItem('formData', JSON.stringify(formData));
 
-      // Hiển thị thông tin bằng Swal.fire
-      Swal.fire({
-        title: "Your Cart:",
-        html: "<table style='width:100%; text-align: left;'>" +
-          "<tr><td>Member Name:</td><td>" + membername + "</td></tr>" +
-          "<tr><td>Full Name:</td><td>" + fullname + "</td></tr>" +
-          "<tr><td>Address:</td><td>" + address + "</td></tr>" +
-          "<tr><td>Email:</td><td>" + email + "</td></tr>" +
-          "<tr><td>Phone:</td><td>" + phone + "</td></tr>" +
-          "<tr><td>Gender:</td><td>" + gender + "</td></tr>" +
-          "<tr><td>Date of Birth:</td><td>" + day + "/" + month + "/" + year + "</td></tr>" +
-          "<tr><td>City:</td><td>" + city + "</td></tr>" +
-          "<tr><td>Content:</td><td>" + content + "</td></tr>" +
-          "</table>",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, send it!",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: "Sending....",
-            text: "Your form has been submitted",
-            icon: "success",
-          }).then(() => {
-            // Chuyển hướng đến trang index.html
-            window.location.href = "index.html";
-          });
+        // Hiển thị thông tin bằng Swal.fire
+        Swal.fire({
+          title: "Your Cart:",
+          html: "<table style='width:100%; text-align: left;'>" +
+            "<tr><td>Member Name:</td><td>" + membername + "</td></tr>" +
+            "<tr><td>Full Name:</td><td>" + fullname + "</td></tr>" +
+            "<tr><td>Address:</td><td>" + address + "</td></tr>" +
+            "<tr><td>Email:</td><td>" + email + "</td></tr>" +
+            "<tr><td>Phone:</td><td>" + phone + "</td></tr>" +
+            "<tr><td>Gender:</td><td>" + gender + "</td></tr>" +
+            "<tr><td>Date of Birth:</td><td>" + day + "/" + month + "/" + year + "</td></tr>" +
+            "<tr><td>City:</td><td>" + city + "</td></tr>" +
+            "<tr><td>Content:</td><td>" + content + "</td></tr>" +
+            "</table>",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, send it!",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              title: "Sending....",
+              text: "Your form has been submitted",
+              icon: "success",
+            }).then(() => {
+              // Chuyển hướng đến trang index.html
+              window.location.href = "index.html";
+            });
+          }
+        });
+      }
+    }
+
+    function isValidDate(day, month, year) {
+      // Ép kiểu sang kiểu số
+      day = parseInt(day);
+      month = parseInt(month);
+      year = parseInt(year);
+      // Kiểm tra năm nhuận
+      var isLeapYear = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+      // Kiểm tra tháng
+      if (month < 1 || month > 12) {
+        return false;
+      }
+      // Kiểm tra ngày
+      if (day < 1 || day > 31) {
+        return false;
+      }
+      // Kiểm tra số ngày của tháng
+      if (
+        (month === 4 || month === 6 || month === 9 || month === 11) &&
+        day > 30
+      ) {
+        return false;
+      } else if (month === 2) {
+        if (isLeapYear && day > 29) {
+          return false;
+        } else if (!isLeapYear && day > 28) {
+          return false;
         }
-      });
+      }
+      return true;
     }
   }
 </script>

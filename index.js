@@ -58,7 +58,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var memberName = loggedInMember.memberName;
 
     // Thay đổi nội dung của thẻ loginShow thành memberName
-    document.getElementById('loginShow').innerText = "Welcome, " + memberName;
+    document.getElementById('loginShow').innerText = "Welcome " + memberName;
+    document.getElementById('loginShow').style.fontSize = '1.17vw';
+    document.getElementById('logoutButton').style.fontSize = '1.17vw';
     // Hiển thị nút Log Out
     document.getElementById('logoutButton').style.display = 'block';
   } else {
