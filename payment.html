@@ -286,7 +286,7 @@
     var quantity = document.getElementById("qty").options[document.getElementById("qty").selectedIndex].text;
     var total = document.getElementsByName("total")[0].value;
     var description = document.getElementById("content").value.trim();
-    var codCheckbox = document.getElementById("codCheckbox").value;
+    var codCheckbox = document.getElementById("codCheckbox");
 
     // Kiểm tra xem các trường đã được nhập hay chưa
     if (fullName === "") {
@@ -333,6 +333,7 @@
           cancelButtonColor: "#d33",
           confirmButtonText: "Try again",
         });
+        document.getElementById("phone").focus();
         return false;
       } else {
         var formPayment = {
