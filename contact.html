@@ -249,7 +249,7 @@
       })
       document.getElementById("email-contact").focus();
       return false;
-    } else if (phone === "") {
+    } else if (phone.length < 10) {
       Swal.fire({
         title: " Incorret",
         text: "Please enter a phone number from 10 to 12 digits.",
